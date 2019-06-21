@@ -2,27 +2,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Requerimientos del Landing Page:
 
-Menú, colocado de manera horizontal y con las siguientes opciones:
--Emergencias (Direccionar otra pagina)
--Perros encontrados (Recorrer en el landing page)
--Eventos (recorre en el landing page)
--Donación (ir a pagina de donaciones)
--Sign in / sign up (O usuario cuando ya se logeó): De aquí se debe desplegar un formulario para el sign up
+Menú, colocado de manera horizontal y con las siguientes opciones:<br>
+-Emergencias (Direccionar otra pagina)<br>
+-Perros encontrados (Recorrer en el landing page)<br>
+-Eventos (recorre en el landing page)<br>
+-Donación (ir a pagina de donaciones)<br>
+-Sign in / sign up (O usuario cuando ya se logeó): De aquí se debe desplegar un formulario para el sign up<br>
 
-Sign up debe contener los siguientes campos y etiquetas:
-Renglón 1 (Etiqueta): Regístrate en XUXO
-Renglón 2 (Cajas de texto):  Nombre | Apellidos
-Renglón 3 (Caja de texto):  e-mail
-Renglón 4 (Caja de texto):  password
-Renglón 5 (Caja de texto):  confirmación del password
-Renglón 6 (Etiqueta): Al registrarte estás aceptando nuestros términos y condiciones (Deberá ser un link a los términos y condiciones)
+Sign up debe contener los siguientes campos y etiquetas:<br>
+Renglón 1 (Etiqueta): Regístrate en XUXO<br>
+Renglón 2 (Cajas de texto):  Nombre | Apellidos<br>
+Renglón 3 (Caja de texto):  e-mail<br>
+Renglón 4 (Caja de texto):  password<br>
+Renglón 5 (Caja de texto):  confirmación del password<br>
+Renglón 6 (Etiqueta): Al registrarte estás aceptando nuestros términos y condiciones (Deberá ser un link a los términos y condiciones)<br>
 
-Hero: Abarcando todo el ancho de la pantalla, deberá mostrar una foto de un perrito o pareja de perritos tiernos y lindos, además deberá incluir al lado izquierdo la siguiente leyenda:
+Hero: Abarcando todo el ancho de la pantalla, deberá mostrar una foto de un perrito o pareja de perritos tiernos y lindos, además deberá incluir al lado izquierdo la siguiente leyenda:<br>
 
-Renglón 1 (Con letras grandes): XUXO
-Renglón 2 (Con posibilidad de extenderse a 2 renglones o a los que sean necesarios):  El lugar donde tú eres el cupido de tu mejor amigo
+Renglón 1 (Con letras grandes): XUXO<br>
+Renglón 2 (Con posibilidad de extenderse a 2 renglones o a los que sean necesarios):  El lugar donde tú eres el cupido de tu mejor amigo<br>
 
-Sección de perros encontrados: Deberá mostrar tarjetas
+Sección de perros encontrados: Deberá mostrar tarjetas...<br>
 
 ## Available Scripts
 

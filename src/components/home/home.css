@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/images/banner.jpg');
+    background: url('/images/banner.jpg') center;
     background-size: cover;
     height: 100vh;
     flex-direction: column;
@@ -28,4 +28,27 @@
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.Events {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/images/banner-events.jpg') center;
+    background-size: cover;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+.subtitleHeader {
+    font-size: 26px;
+    margin: 10px 30px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+}
+@media (max-width:768px) {
+    .titleHeader {
+        font-size: 28px;
+    }
 }

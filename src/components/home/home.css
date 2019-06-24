@@ -1,0 +1,31 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/images/banner.jpg');
+    background-size: cover;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+.titleHeader {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    max-width: 600px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+.btnHeader {
+    border:2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    margin: 20px;
+    background: none;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}

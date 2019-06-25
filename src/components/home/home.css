@@ -55,10 +55,12 @@
     
     text-transform: uppercase;
 }
-.PerrosEncontrados {
+.PerrosEncontrados, .Adopciones {
     padding: 80px 0px;
-    background: #eeeeee;
     text-align: center;
+}
+.PerrosEncontrados {
+    background: #f7f7f7;
 }
 .lineGreen {
     width: 135px;
@@ -102,14 +104,62 @@
     color: #fff;
     font-family: 'Raleway', sans-serif;
 }
-.PerroEncontradoItem:hover .mask {
+.PerroEncontradoItem:hover .mask, .AdopcionesItem:hover .mask {
     display: flex;
 }
 .iconLocation {
     width: 40px;
     height: 50px;
 }
-@media (max-width:768px) {
+.Adopciones {
+    background: #eeeeee;
+}
+.AdopcionesContainer {
+    max-width: 1170px;
+    margin: 50px 30px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.AdopcionesItem {
+    width: 25%;
+    position: relative;
+    cursor: pointer;
+    padding: 20px;
+    box-sizing: border-box
+}
+.AdopcionesItem .mask{
+    height: 300px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+}
+.AdopcionesImg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.iconMore {
+    width: 50px;
+    height: 50px;
+}
+.AdopcionesName {
+    background: #f6f6f6;
+    padding: 10px;
+    padding: 13px 10px;
+    margin-top: -3px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2b3034;
+}
+@media (max-width:991px) {
+    .AdopcionesItem {
+        width:50%;
+    }
+}
+@media (max-width:767px) {
     .titleHeader {
         font-size: 28px;
     }

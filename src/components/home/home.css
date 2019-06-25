@@ -196,6 +196,30 @@
     text-align: center;
     line-height: 30px;
 }
+.item1 { 
+    grid-area: publicidad1; 
+    background: url('/images/publicidad1.jpg');
+    background-size: cover;
+}
+.item2 { 
+    grid-area: publicidad2; 
+    background: url('/images/publicidad2.jpg');
+    background-size: cover;
+}
+.item3 { 
+    grid-area: publicidad3; 
+    background: url('/images/publicidad3.jpg');
+    background-size: cover;
+}
+
+.Publicidad {
+  display: grid;
+  grid-template-areas:
+    'publicidad1 publicidad2 '
+    'publicidad1 publicidad3 ';
+  height: 700px;
+}
+
 @media (max-width:991px) {
     .AdopcionesItem, .BlogItem {
         width:50%;

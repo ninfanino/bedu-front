@@ -11,7 +11,7 @@
 .titleHeader {
     color: #fff;
     font-size: 36px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 36px;
     max-width: 600px;
     font-family: 'Raleway', sans-serif;
@@ -46,6 +46,68 @@
     font-weight: 400;
     font-family: 'Raleway', sans-serif;
     color: #fff;
+}
+.title {
+    color: #2b3034;
+    font-size: 36px;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+    
+    text-transform: uppercase;
+}
+.PerrosEncontrados {
+    padding: 80px 0px;
+    background: #eeeeee;
+    text-align: center;
+}
+.lineGreen {
+    width: 135px;
+    height: 5px;
+    background: #76c383;
+    margin: 20px auto;
+}
+.slogan {
+    color: #2b3034;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+.PerrosEncontradosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 60px;
+}
+.PerroEncontradoItem {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    flex-grow: 1;
+}
+.PerroEncontradoImg {
+    height: 250px;
+    object-fit: cover;
+}
+.mask {
+    position: absolute;
+    background: rgba(118, 195, 131, .75);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+.PerroEncontradoItem:hover .mask {
+    display: flex;
+}
+.iconLocation {
+    width: 40px;
+    height: 50px;
 }
 @media (max-width:768px) {
     .titleHeader {

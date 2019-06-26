@@ -1,0 +1,79 @@
+.Modal {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 100px;
+    background:  white;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+  }
+  
+  .Modal-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: #76c383;
+    color: white;
+    cursor: pointer;
+  }
+  .ModalBox {
+      position: fixed;
+      background: rgba(0,0,0, .5);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  }
+  .ModalHeader {
+    background: #76c383;
+    height: 40px;
+    color: #fff;
+    padding-left: 20px;
+    line-height: 40px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  .nameForm {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2b3034;
+    font-size: 20px;
+    padding: 20px;
+  }
+  .fieldsContainer {
+      width: 100%;
+      padding: 0px 20px; 
+      box-sizing: border-box;   
+      display: grid;
+      grid-template-columns: auto auto;
+  }
+  .fieldsContainer .item {
+      padding: 10px;
+      box-sizing: border-box;  
+  }
+  .inputModal {
+      padding: 8px 10px;
+      width: 100%;
+      box-sizing: border-box;  
+  }
+  .fieldsCheck {
+      padding: 20px;
+      font-family: 'Raleway', sans-serif;
+      color: #91979b;
+  }
+  .btnFormulario {
+    padding: 0px 20px 20px;
+  }
+  @media (max-width:767px) {
+    .fieldsContainer {
+        grid-template-columns: initial;
+    }
+  }

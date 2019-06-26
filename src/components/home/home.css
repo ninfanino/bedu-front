@@ -189,6 +189,7 @@ body {
 }
 .btnBlog {
     border-radius: 15px;
+    border:none;
     height: 30px;
     width: 90px;
     margin: 10px 0;

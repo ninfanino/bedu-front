@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-    <div class="Footer">
+    <div className="Footer">
         <img src="/images/logo-footer.png" alt="Patrocinador" className="logoFooter" />
 
         <div className="address">
@@ -11,10 +11,10 @@ const Footer = () => (
 
         <div className="socialMediaFooter">
             <div className="iconFooter">
-                <img src="/images/icon-fb.png" alt="fb-icon" />
+                <img src="/images/icon-fb.png" alt="Facebook" />
             </div>
             <div className="iconFooter">
-                <img src="/images/icon-in.png" alt="in-icon" />
+                <img src="/images/icon-in.png" alt="Instagram" />
             </div>
         </div>
 

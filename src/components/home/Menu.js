@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from './Icon'
 import {Link, NavLink} from 'react-router-dom';
 
 

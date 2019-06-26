@@ -16,9 +16,9 @@ const PerrosEncontrados = () => (
 
         <div className="PerrosEncontradosContainer">
             <div className="PerroEncontradoItem">
-                <img src="/images/slidder1.jpg" className="PerroEncontradoImg" />
+                <img src="/images/slidder1.jpg" className="PerroEncontradoImg" alt="Encontrados" />
                 <div className="mask">
-                    <img src="/images/icon-location.png" className="iconLocation" />
+                    <img src="/images/icon-location.png" className="iconLocation" alt="Encontrados" />
                     <div className="addressLocation">
                         Zapopan, Jal <br/>3311771791
                     </div>
@@ -26,9 +26,9 @@ const PerrosEncontrados = () => (
             </div>
 
             <div className="PerroEncontradoItem">
-                <img src="/images/slidder2.jpg" className="PerroEncontradoImg" />
+                <img src="/images/slidder2.jpg" className="PerroEncontradoImg" alt="Encontrados" />
                 <div className="mask">
-                    <img src="/images/icon-location.png" className="iconLocation" />
+                    <img src="/images/icon-location.png" className="iconLocation" alt="Encontrados" />
                     <div className="addressLocation">
                         Zapopan, Jal <br/>3311771791
                     </div>
@@ -36,9 +36,9 @@ const PerrosEncontrados = () => (
             </div>
 
             <div className="PerroEncontradoItem">
-                <img src="/images/slidder3.jpg" className="PerroEncontradoImg" />
+                <img src="/images/slidder3.jpg" className="PerroEncontradoImg" alt="Encontrados" />
                 <div className="mask">
-                    <img src="/images/icon-location.png" className="iconLocation" />
+                    <img src="/images/icon-location.png" className="iconLocation" alt="Encontrados" />
                     <div className="addressLocation">
                         Zapopan, Jal <br/>3311771791
                     </div>
@@ -46,9 +46,9 @@ const PerrosEncontrados = () => (
             </div>
 
             <div className="PerroEncontradoItem">
-                <img src="/images/slidder4.jpg" className="PerroEncontradoImg" />
+                <img src="/images/slidder4.jpg" className="PerroEncontradoImg" alt="Encontrados" />
                 <div className="mask">
-                    <img src="/images/icon-location.png" className="iconLocation" />
+                    <img src="/images/icon-location.png" className="iconLocation" alt="Encontrados" />
                     <div className="addressLocation">
                         Zapopan, Jal <br/>3311771791
                     </div>

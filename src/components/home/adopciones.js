@@ -16,39 +16,39 @@ const Adopciones = () => (
 
         <div className="AdopcionesContainer">
             <div className="AdopcionesItem">
-                <img src="/images/adopciones1.jpg" className="AdopcionesImg" />
+                <img src="/images/adopciones1.jpg" className="AdopcionesImg" alt="Adopciones" />
                 <div className="AdopcionesName">
                     Max
                 </div>
                 <div className="mask">
-                    <img src="/images/icon-more.png" className="iconMore" />
+                    <img src="/images/icon-more.png" className="iconMore" alt="Adopciones" />
                 </div>
             </div>
             <div className="AdopcionesItem">
-                <img src="/images/adopciones2.jpg" className="AdopcionesImg" />
+                <img src="/images/adopciones2.jpg" className="AdopcionesImg" alt="Adopciones" />
                 <div className="AdopcionesName">
                     Yuki
                 </div>
                 <div className="mask">
-                    <img src="/images/icon-more.png" className="iconMore" />
+                    <img src="/images/icon-more.png" className="iconMore" alt="Adopciones" />
                 </div>
             </div>
             <div className="AdopcionesItem">
-                <img src="/images/adopciones3.jpg" className="AdopcionesImg" />
+                <img src="/images/adopciones3.jpg" className="AdopcionesImg" alt="Adopciones" />
                 <div className="AdopcionesName">
                     Gandalf
                 </div>
                 <div className="mask">
-                    <img src="/images/icon-more.png" className="iconMore" />
+                    <img src="/images/icon-more.png" className="iconMore" alt="Adopciones" />
                 </div>
             </div>
             <div className="AdopcionesItem">
-                <img src="/images/adopciones4.jpg" className="AdopcionesImg" />
+                <img src="/images/adopciones4.jpg" className="AdopcionesImg" alt="Adopciones" />
                 <div className="AdopcionesName">
                     Marcelin
                 </div>
                 <div className="mask">
-                    <img src="/images/icon-more.png" className="iconMore" />
+                    <img src="/images/icon-more.png" className="iconMore"  alt="Adopciones" />
                 </div>
             </div>
         </div>

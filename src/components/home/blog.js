@@ -16,7 +16,7 @@ const Blog = () => (
 
         <div className="BlogContainer">
             <div className="BlogItem">
-                <img src="/images/adopciones1.jpg" className="BlogImg" />
+                <img src="/images/adopciones1.jpg" className="BlogImg" alt="Blog" />
                 <div className="BlogInfo">
                     <div className="titleBlog">Cómo armar el expediente médico de tu perro</div>
                     <div className="dateBlog">22 de junio</div>
@@ -26,7 +26,7 @@ const Blog = () => (
             </div>
 
             <div className="BlogItem">
-                <img src="/images/adopciones2.jpg" className="BlogImg" />
+                <img src="/images/adopciones2.jpg" className="BlogImg" alt="Blog" />
                 <div className="BlogInfo">
                     <div className="titleBlog">Test ¿Cuánto conoces a tu perro?</div>
                     <div className="dateBlog">22 de junio</div>
@@ -36,7 +36,7 @@ const Blog = () => (
             </div>
 
             <div className="BlogItem">
-                <img src="/images/adopciones3.jpg" className="BlogImg" />
+                <img src="/images/adopciones3.jpg" className="BlogImg" alt="Blog" />
                 <div className="BlogInfo">
                     <div className="titleBlog">Alimento apropiado para tu perro</div>
                     <div className="dateBlog">22 de junio</div>
@@ -46,7 +46,7 @@ const Blog = () => (
             </div>
 
             <div className="BlogItem">
-                <img src="/images/adopciones4.jpg" className="BlogImg" />
+                <img src="/images/adopciones4.jpg" className="BlogImg" alt="Blog" />
                 <div className="BlogInfo">
                     <div className="titleBlog">¿A cuántos perros famosos puedes reconocer?</div>
                     <div className="dateBlog">22 de junio</div>

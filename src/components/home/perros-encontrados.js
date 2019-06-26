@@ -8,22 +8,22 @@ var found = [
     {
         path:     "/images/slidder1.jpg",
         address:  "Zapopan, JAL",
-        tel:      "3331529751"
+        phone:      "3331529751"
     },
     {
         path: "/images/slidder2.jpg",
         address:  "Guadalajara, JAL",
-        tel:      "3238951365"
+        phone:      "3238951365"
     },
     {
         path: "/images/slidder3.jpg",
         address:  "Tonalá, JAL",
-        tel:      "3326598512"
+        phone:      "3326598512"
     },
     {
         path: "/images/slidder4.jpg",
         address:  "Zapopan, JAL",
-        tel:      "3314589654"
+        phone:      "3314589654"
     }
 ]
 
@@ -45,7 +45,7 @@ const PerrosEncontrados = () => (
                         <div className="mask">
                             <img src="/images/icon-location.png" className="iconLocation" alt="icon"/>
                             <div className="addressLocation">
-                                {item.address}<br/>{item.tel}
+                                {item.address}<br/>{item.phone}
                             </div>
                         </div>
                     </div>

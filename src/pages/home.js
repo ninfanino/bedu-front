@@ -9,24 +9,24 @@ import Blog from '../components/home/blog';
 import Publicidad from '../components/home/publicidad';
 import Patrocinadores from '../components/home/patrocinadores';
 import Footer from '../components/home/footer';
-import Modal from '../components/home/modal';
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
 *****/
 
-const Home = () => (
-    <div>
-        <Modal/>
-        <Header/> 
-        <PerrosEncontrados/>
-        <Adopciones/>
-        <Events/>
-        <Blog/>
-        <Publicidad/> 
-        <Patrocinadores/>
-        <Footer/>
-    </div>
-)
+const Home = () => {
+    return (
+        <div>
+            <Header/> 
+            <PerrosEncontrados/>
+            <Adopciones/>
+            <Events/>
+            <Blog/>
+            <Publicidad/> 
+            <Patrocinadores/>
+            <Footer/>
+        </div>
+    );
+}
 
-export default Home
+export default Home;

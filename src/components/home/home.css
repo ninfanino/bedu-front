@@ -1,3 +1,6 @@
+body {
+    margin: 0;
+}
 .Header {
     display: flex;
     align-items: center;
@@ -219,6 +222,15 @@
     'publicidad1 publicidad3 ';
   height: 700px;
 }
+.Patrocinadores {
+    background: #f6f6f6;
+    padding: 40px 25px;
+    text-align: center;
+}
+.Patrocinadores img {
+    height: 100px;
+    margin: 15px;
+}
 
 @media (max-width:991px) {
     .AdopcionesItem, .BlogItem {
@@ -234,5 +246,15 @@
     }
     .BlogItem {
         width:100%;
+    }
+    .Publicidad {
+        height: auto;
+        grid-template-areas:
+          'publicidad1'
+          'publicidad2 '
+          'publicidad3 '
+    }
+    .item1, .item2, .item3 {
+        height: 300px;
     }
 }

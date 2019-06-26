@@ -11,10 +11,10 @@ const Footer = () => (
 
         <div className="socialMediaFooter">
             <div className="iconFooter">
-                <img src="/images/icon-fb.png" />
+                <img src="/images/icon-fb.png" alt="fb-icon" />
             </div>
             <div className="iconFooter">
-                <img src="/images/icon-in.png" />
+                <img src="/images/icon-in.png" alt="in-icon" />
             </div>
         </div>
 

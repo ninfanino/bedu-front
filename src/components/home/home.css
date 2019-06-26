@@ -231,7 +231,46 @@ body {
     height: 100px;
     margin: 15px;
 }
-
+.Footer {
+    background: #2b3034;
+    padding: 50px 0px 0px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+.logoFooter {
+    width: 100px;
+}
+.address {
+    line-height: 24px;
+    margin: 20px 0px;
+}
+.socialMediaFooter {
+    margin-top: 20px;
+}
+.iconFooter {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #e52931;
+    border-radius: 20px;
+    margin: 10px;
+    vertical-align: top;
+}
+.iconFooter img {
+    height: 22px;
+    margin-top: 8px;
+}
+.copy {
+    background: #373a3f;
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    color: #b2b1b1;
+}
 @media (max-width:991px) {
     .AdopcionesItem, .BlogItem {
         width:50%;

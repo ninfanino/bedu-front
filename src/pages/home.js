@@ -8,6 +8,7 @@ import Adopciones from '../components/home/adopciones';
 import Blog from '../components/home/blog';
 import Publicidad from '../components/home/publicidad';
 import Patrocinadores from '../components/home/patrocinadores';
+import Footer from '../components/home/footer';
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
@@ -22,6 +23,7 @@ const Home = () => (
         <Blog/>
         <Publicidad/> 
         <Patrocinadores/>
+        <Footer/>
     </div>
 )
 

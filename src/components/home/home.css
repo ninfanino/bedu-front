@@ -22,16 +22,21 @@ body {
     margin: 20px;
 }
 .MenuIcons{
-    /* height: 20px; */
-    display: flex;
+    height: 40px;
     align-content: center;
     justify-content: center;
     margin: 10px;
     border-radius: 30px;
-    width: 35px;
+    width: 40px;
     background-color: red;
-    padding: 10px;
-    /* text-align: stretch; */
+    border:none;
+    text-align: center;
+    line-height: 40px;
+}
+.MenuIcons img {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
 }
 
 #MenuImage{

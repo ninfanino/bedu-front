@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
 
-const Menu = () => (
+const Menu = (props) => (
   <div className="Menu">
     <div className="MenuLogo">
       <img src="./images/logo-header.png" alt="XUXO" id="MenuImage"></img>
@@ -18,9 +18,9 @@ const Menu = () => (
       <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
         <img src="./images/icon-in.png" alt="Instagram" ></img>
       </NavLink>
-      <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
+      <button className="MenuIcons" onClick={props.handleOpenModal}>
         <img src="./images/icon-account.png" alt="Account" ></img>
-      </NavLink>
+      </button>
     </div>
   </div>
 )

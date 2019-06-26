@@ -9,7 +9,7 @@ function Modal(props) {
             <div className="Modal">
                 <div className="ModalHeader">
                     <div className="ModalName">
-                        { type == 'registro' ? 'Registro' : 'Inicia sesion' }
+                        { type === 'registro' ? 'Registro' : 'Inicia sesion' }
                     </div>
                     <button 
                         className="Modal-close"

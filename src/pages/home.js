@@ -31,6 +31,12 @@ class Home extends Component {
             type: 'registro'
         })
     }
+    handleOpenModalLogin = () => {
+        this.setState({
+            modalVisible:true,
+            type: 'login'
+        })
+    }
     handleCloseModal = () => {
         this.setState({
             modalVisible: false
@@ -39,7 +45,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Menu/>
+                <Menu handleOpenModal={this.handleOpenModalLogin}/>
                 <Header handleOpenModal={this.handleOpenModalRegistro}/> 
                 <PerrosEncontrados/>
                 <Adopciones/>

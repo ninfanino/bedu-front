@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /****
  * Necesita conectarse al back
@@ -27,32 +27,40 @@ var found = [
     }
 ]
 
-const PerrosEncontrados = () => (
-    <div className="PerrosEncontrados">
-        <div className="title">
-            perros encontrados
-        </div>
-        <div className="lineGreen"></div>
-        <div className="slogan">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
+const PerrosEncontrados = () => {
 
-        <div className="PerrosEncontradosContainer">
-            {
-                found.map((item, i) => 
-                    <div className="PerroEncontradoItem" key={i}>
-                        <img src={item.path} alt={item.address} className="PerroEncontradoImg" />
-                        <div className="mask">
-                            <img src="/images/icon-location.png" className="iconLocation" alt="icon"/>
-                            <div className="addressLocation">
-                                {item.address}<br/>{item.phone}
-                            </div>
-                        </div>
+    return (
+        <div className="PerrosEncontrados">
+            <div className="title">
+                perros encontrados
+            </div>
+            <div className="lineGreen"></div>
+            <div className="slogan">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+
+            <div className="PerrosEncontradosContainer">
+                <div className="glide" id="found">
+                    <div className="glide__track" data-glide-el="track">
+                        <ul className="glide__slides">
+                        {
+                            found.map((item, i) => 
+                                <div className="glide__slide PerroEncontradoItem" key={i}>
+                                    <img src={item.path} alt={item.address} className="PerroEncontradoImg" />
+                                    <div className="mask">
+                                        <img src="/images/icon-location.png" className="iconLocation" alt="icon"/>
+                                        <div className="addressLocation">
+                                            {item.address}<br/>{item.phone}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }   
+                        </ul>
                     </div>
-                )
-            }            
+                </div>                               
+            </div>
         </div>
-    </div>
-)
+)}
 
 export default PerrosEncontrados

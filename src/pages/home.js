@@ -30,8 +30,14 @@ class Home extends Component {
         var x = document.getElementById("MenuList");
         if (x.className === "MenuNav") {
             x.className += " responsive";
+            this.setState({
+                menuDisplayed:true,
+            })
         } else {
             x.className = "MenuNav";
+            this.setState({
+                menuDisplayed:false,
+            })
         }
         console.log(x.className)
     }
@@ -57,6 +63,7 @@ class Home extends Component {
             <div>
                 <Menu handleOpenModal={this.handleOpenModalLogin}
                       handleDispalyedMenu={this.handleDispalyedMenu}
+                      menuDisplayed={this.menuDisplayed}
                 />
                 <Header handleOpenModal={this.handleOpenModalRegistro}/> 
                 <PerrosEncontrados/>

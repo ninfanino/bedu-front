@@ -28,7 +28,7 @@ body {
     margin: 10px;
     border-radius: 30px;
     width: 40px;
-    background-color: red;
+    background-color: #e52931;
     border:none;
     text-align: center;
     line-height: 40px;
@@ -364,6 +364,7 @@ body {
     }
     .Menu{
         padding: 0 20px 0 20px;
+        background: #373a3f;
     }
     .BurgerDisplay{
         display: block;

@@ -14,31 +14,17 @@ const Menu = (props) => (
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">PERROS ENCONTRADOS</NavLink>
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">EVENTOS</NavLink>
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">DONAR</NavLink>
-      if({props.menuDisplayed})
-      (
-      <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
+
+      <button className="MenuIcons">
         <img src="./images/icon-fb.png" alt="Página de Facebook" ></img>
-      </NavLink>
-      <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
+      </button>
+      <button className="MenuIcons">
         <img src="./images/icon-in.png" alt="Instagram"></img>
-      </NavLink>
+      </button>
       <button className="MenuIcons" onClick={props.handleOpenModal}>
         <img src="./images/icon-account.png" alt="Ingresa a tu Cuenta" ></img>
       </button>
-)
-      else
-      (
-        <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
-          Página de Facebook
-        </NavLink>
-        <NavLink to="/" activeClassName="isSelected" className="MenuIcons">
-          Instagram
-        </NavLink>
-        <button className="MenuIcons" onClick={props.handleOpenModal}>
-          Ingresa a tu Cuenta
-        </button>
-      )
-    }
+
     </div>
   </div>
 )

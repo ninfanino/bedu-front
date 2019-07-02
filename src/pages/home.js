@@ -23,7 +23,17 @@ import Login from '../components/general/login';
 class Home extends Component {
     state = {
         modalVisible:false,
-        type: ''
+        type: '',
+        menuDisplayed:false
+    }
+    handleDispalyedMenu = () => {
+        var x = document.getElementById("MenuList");
+        if (x.className === "MenuNav") {
+            x.className += " responsive";
+        } else {
+            x.className = "MenuNav";
+        }
+        console.log(x.className)
     }
     handleOpenModalRegistro = () => {
         this.setState({
@@ -45,7 +55,9 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Menu handleOpenModal={this.handleOpenModalLogin}/>
+                <Menu handleOpenModal={this.handleOpenModalLogin}
+                      handleDispalyedMenu={this.handleDispalyedMenu}
+                />
                 <Header handleOpenModal={this.handleOpenModalRegistro}/> 
                 <PerrosEncontrados/>
                 <Adopciones/>

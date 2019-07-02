@@ -3,6 +3,7 @@ import Menu from '../components/home/Menu'
 import Header from '../components/home/header';
 import '../components/fonts.css'
 import '../components/home/home.css'
+import '../components/home/slider.css'
 import Events from '../components/home/events';
 import PerrosEncontrados from '../components/home/perros-encontrados';
 import Adopciones from '../components/home/adopciones';
@@ -14,7 +15,8 @@ import ModalContainer from '../components/general/modalContainer';
 import Modal from '../components/general/modal';
 import Registro from '../components/general/registro';
 import Login from '../components/general/login';
-
+import Glide from '@glidejs/glide'
+import Axios from 'axios';
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
@@ -41,6 +43,23 @@ class Home extends Component {
         }
         console.log(x.className)
     }
+
+    componentDidMount() {
+        var found = new Glide("#found",{
+            type: 'carousel',
+            autoplay: 2000,
+            perView: 4
+        })
+        found.mount()  
+        var adopt = new Glide("#adopt",{
+            type: 'carousel',
+            focusAt: 'center',
+            autoplay: 2000,
+            perView: 4
+        })
+        adopt.mount()      
+    }
+
     handleOpenModalRegistro = () => {
         this.setState({
             modalVisible:true,
@@ -75,7 +94,7 @@ class Home extends Component {
                 <Footer/>
                 {
                     this.state.modalVisible &&
-                    <ModalContainer>
+                    <ModalContainer handleClick={this.handleCloseModal}>
                         <Modal handleClick={this.handleCloseModal} type={this.state.type} >
                             {
                                 this.state.type === 'registro' &&

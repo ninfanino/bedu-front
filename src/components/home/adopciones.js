@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 /****
  * Necesita conectarse al back
  ***/
@@ -23,7 +22,9 @@ import React from 'react'
     }
  ]
 
-const Adopciones = () => (
+const Adopciones = () => {
+
+return (
     <div className="Adopciones">
         <div className="title">
             Adopciones
@@ -34,21 +35,27 @@ const Adopciones = () => (
         </div>
 
         <div className="AdopcionesContainer">
-            {
-                adopted.map((item, i) =>
-                    <div className="AdopcionesItem" key={i}>
-                        <img src={item.path} className="AdopcionesImg" alt={item.dogname}/>
-                        <div className="AdopcionesName">
-                            {item.dogname}
-                        </div>
-                        <div className="mask">
-                            <img src="/images/icon-more.png" className="iconMore" alt="icon"/>
-                        </div>
-                    </div>
-                )
-            }
+            <div className="glide" id="adopt">
+                <div className="glide__track" data-glide-el="track">
+                    <ul className="glide__slides">
+                    {
+                        adopted.map((item, i) =>
+                            <div className="glide__slide AdopcionesItem" key={i}>
+                                <img src={item.path} className="AdopcionesImg" alt={item.dogname}/>
+                                <div className="AdopcionesName">
+                                    {item.dogname}
+                                </div>
+                                <div className="mask">
+                                    <img src="/images/icon-more.png" className="iconMore" alt="icon"/>
+                                </div>
+                            </div>
+                        )
+                    }
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-)
+)}
 
 export default Adopciones

@@ -11,12 +11,6 @@ const Registro = () => (
                 <div className="item">
                     <input placeholder="Email" className="inputModal" />
                 </div>
-                <div className="item">
-                    <input placeholder="Nombre" className="inputModal" />
-                </div>
-                <div className="item">
-                    <input placeholder="Email" className="inputModal" />
-                </div>
             </div>
             <div className="fieldsCheck">
                 <input type="checkbox" />

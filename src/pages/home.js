@@ -26,8 +26,40 @@ class Home extends Component {
     state = {
         modalVisible:false,
         type: '',
-        menuDisplayed:false
+        menuDisplayed:false,
+        user: '',
+        pass: ''
     }
+
+    handlerLogin = (e) => {
+        
+        e.preventDefault()
+        let obj = {
+            user: this.state.user,
+            pass: this.state.pass
+        }
+        console.log("Entrando al boton", obj)
+        fetch("http://localhost:3001/login", {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method : 'POST',
+            body: JSON.stringify(obj)
+        })
+        .then(function(response){
+            console.log(response)
+        })
+        .then(response => console.log(response))
+        //.then(response => this.handlerGetData())
+        this.setState({user: '', pass: ''})
+    }
+
+    updateAttribute = (e) =>{
+        console.log(this.state.user, this.state.pass)
+        this.setState({[e.name]: e.value})
+    }
+
     handleDispalyedMenu = () => {
         var x = document.getElementById("MenuList");
         if (x.className === "MenuNav") {
@@ -103,7 +135,9 @@ class Home extends Component {
 
                             {
                                 this.state.type === 'login' &&
-                                <Login/>
+                                <Login handlerLogin={this.handlerLogin}
+                                        updateAttribute={this.updateAttribute}
+                                />
                             }
                         </Modal>
                     </ModalContainer>

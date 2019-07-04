@@ -47,11 +47,9 @@ class Home extends Component {
             method : 'POST',
             body: JSON.stringify(obj)
         })
-        .then(function(response){
-            console.log(response)
-        })
-        .then(response => console.log(response))
-        //.then(response => this.handlerGetData())
+        .then(res => res.json())
+        .then(message => console.log('Comming message: ', message))
+        
         this.setState({user: '', pass: ''})
     }
 

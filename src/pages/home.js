@@ -3,6 +3,7 @@ import Menu from '../components/home/Menu'
 import Header from '../components/home/header';
 import '../components/fonts.css'
 import '../components/home/home.css'
+import '../components/home/slider.css'
 import Events from '../components/home/events';
 import PerrosEncontrados from '../components/home/perros-encontrados';
 import Adopciones from '../components/home/adopciones';
@@ -14,7 +15,8 @@ import ModalContainer from '../components/general/modalContainer';
 import Modal from '../components/general/modal';
 import Registro from '../components/general/registro';
 import Login from '../components/general/login';
-
+import Glide from '@glidejs/glide'
+import Axios from 'axios';
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
@@ -23,8 +25,73 @@ import Login from '../components/general/login';
 class Home extends Component {
     state = {
         modalVisible:false,
-        type: ''
+        type: '',
+        menuDisplayed:false,
+        user: '',
+        pass: ''
     }
+
+    handlerLogin = (e) => {
+        
+        e.preventDefault()
+        let obj = {
+            user: this.state.user,
+            pass: this.state.pass
+        }
+        console.log("Entrando al boton", obj)
+        fetch("http://localhost:3001/login", {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method : 'POST',
+            body: JSON.stringify(obj)
+        })
+        .then(function(response){
+            console.log(response)
+        })
+        .then(response => console.log(response))
+        //.then(response => this.handlerGetData())
+        this.setState({user: '', pass: ''})
+    }
+
+    updateAttribute = (e) =>{
+        console.log(this.state.user, this.state.pass)
+        this.setState({[e.name]: e.value})
+    }
+
+    handleDispalyedMenu = () => {
+        var x = document.getElementById("MenuList");
+        if (x.className === "MenuNav") {
+            x.className += " responsive";
+            this.setState({
+                menuDisplayed:true,
+            })
+        } else {
+            x.className = "MenuNav";
+            this.setState({
+                menuDisplayed:false,
+            })
+        }
+        console.log(x.className)
+    }
+
+    componentDidMount() {
+        var found = new Glide("#found",{
+            type: 'carousel',
+            autoplay: 2000,
+            perView: 4
+        })
+        found.mount()  
+        var adopt = new Glide("#adopt",{
+            type: 'carousel',
+            focusAt: 'center',
+            autoplay: 2000,
+            perView: 4
+        })
+        adopt.mount()      
+    }
+
     handleOpenModalRegistro = () => {
         this.setState({
             modalVisible:true,
@@ -45,7 +112,10 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Menu handleOpenModal={this.handleOpenModalLogin}/>
+                <Menu handleOpenModal={this.handleOpenModalLogin}
+                      handleDispalyedMenu={this.handleDispalyedMenu}
+                      menuDisplayed={this.menuDisplayed}
+                />
                 <Header handleOpenModal={this.handleOpenModalRegistro}/> 
                 <PerrosEncontrados/>
                 <Adopciones/>
@@ -56,7 +126,7 @@ class Home extends Component {
                 <Footer/>
                 {
                     this.state.modalVisible &&
-                    <ModalContainer>
+                    <ModalContainer handleClick={this.handleCloseModal}>
                         <Modal handleClick={this.handleCloseModal} type={this.state.type} >
                             {
                                 this.state.type === 'registro' &&
@@ -65,7 +135,9 @@ class Home extends Component {
 
                             {
                                 this.state.type === 'login' &&
-                                <Login/>
+                                <Login handlerLogin={this.handlerLogin}
+                                        updateAttribute={this.updateAttribute}
+                                />
                             }
                         </Modal>
                     </ModalContainer>

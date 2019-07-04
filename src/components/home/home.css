@@ -4,7 +4,7 @@ body {
 .Menu{
     display: flex;
     align-items: center;
-    text-align: right;
+    text-align: center;
     z-index: 2;
     position: absolute;
     left: 0;
@@ -28,7 +28,7 @@ body {
     margin: 10px;
     border-radius: 30px;
     width: 40px;
-    background-color: red;
+    background-color: #e52931;
     border:none;
     text-align: center;
     line-height: 40px;
@@ -41,6 +41,14 @@ body {
 
 #MenuImage{
     height: 100px;
+}
+
+#BurgerMenu{
+    height: 60px;
+}
+
+.BurgerDisplay{
+    display: none;
 }
 
 .MenuNav{
@@ -321,6 +329,15 @@ body {
     color: #b2b1b1;
 }
 @media (max-width:991px) {
+    /* .MenuNav{
+        display: flex;
+    } */
+    .MenuOptions{
+        font-size: 15px;
+    }
+    .MenuOptions{
+        margin: 10px;
+    }
     .AdopcionesItem, .BlogItem {
         width:50%;
     }
@@ -329,6 +346,29 @@ body {
     }
 }
 @media (max-width:767px) {
+    .MenuNav{
+        display: none;
+    }
+    .MenuOptions{
+        display: block;
+    }
+    .MenuNav.responsive{
+        background-color: #76c383;
+        float: right;
+        position: absolute;
+        display: block;
+        height: fit-content;
+        left: 0;
+        right: 0;
+        margin-top: 140px;
+    }
+    .Menu{
+        padding: 0 20px 0 20px;
+        background: #373a3f;
+    }
+    .BurgerDisplay{
+        display: block;
+    }
     .titleHeader {
         font-size: 28px;
     }

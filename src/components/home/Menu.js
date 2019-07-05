@@ -1,12 +1,15 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
-const Menu = (props) => (
+
+const Menu = (props) => {
+  let {handleOpenModal, handleDispalyedMenu, menuDisplayed} = props
+  return(
   <div className="Menu">
     <div className="MenuLogo">
       <img src="./images/logo-header.png" alt="XUXO" id="MenuImage"></img>
     </div>
-    <div className="BurgerDisplay" onClick={props.handleDispalyedMenu}>
+    <div className="BurgerDisplay" onClick={handleDispalyedMenu}>
       <img src="./images/burger-menu.png" alt="Menú" id="BurgerMenu" ></img>
     </div>
     <div className="MenuNav" id="MenuList">
@@ -21,12 +24,13 @@ const Menu = (props) => (
       <button className="MenuIcons">
         <img src="./images/icon-in.png" alt="Instagram"></img>
       </button>
-      <button className="MenuIcons" onClick={props.handleOpenModal}>
+      <button className="MenuIcons" onClick={handleOpenModal}>
         <img src="./images/icon-account.png" alt="Ingresa a tu Cuenta" ></img>
       </button>
 
     </div>
   </div>
-)
+  )
+}
 
 export default Menu

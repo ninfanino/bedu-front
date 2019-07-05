@@ -15,135 +15,53 @@ import ModalContainer from '../components/general/modalContainer';
 import Modal from '../components/general/modal';
 import Registro from '../components/general/registro';
 import Login from '../components/general/login';
-import Glide from '@glidejs/glide'
-import Axios from 'axios';
+
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
 *****/
 
-class Home extends Component {
-    state = {
-        modalVisible:false,
-        type: '',
-        menuDisplayed:false,
-        user: '',
-        pass: ''
-    }
+//class Home extends Component {
+const Home = (props) => {
+    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass} = props
 
-    handlerLogin = (e) => {
-        
-        e.preventDefault()
-        let obj = {
-            user: this.state.user,
-            pass: this.state.pass
-        }
-        console.log("Entrando al boton", obj)
-        fetch("http://localhost:3001/login", {
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-            method : 'POST',
-            body: JSON.stringify(obj)
-        })
-        .then(res => res.json())
-        .then(message => console.log('Comming message: ', message))
-        
-        this.setState({user: '', pass: ''})
-    }
+    return (
+        <div>
+            <Menu handleOpenModal={handleOpenModalLogin}
+                    handleDispalyedMenu={handleDispalyedMenu}
+                    menuDisplayed={menuDisplayed}
+            />
+            <Header handleOpenModal={handleOpenModalRegistro}/> 
+            <PerrosEncontrados/>
+            <Adopciones/>
+            <Events/>
+            <Blog/>
+            <Publicidad/> 
+            <Patrocinadores/>
+            <Footer/>
+            {
+                modalVisible &&
+                <ModalContainer handleClick={handleCloseModal}>
+                    <Modal handleClick={handleCloseModal} type={type} >
+                        {
+                            type === 'registro' &&
+                            <Registro/>
+                        }
 
-    updateAttribute = (e) =>{
-        console.log(this.state.user, this.state.pass)
-        this.setState({[e.name]: e.value})
-    }
-
-    handleDispalyedMenu = () => {
-        var x = document.getElementById("MenuList");
-        if (x.className === "MenuNav") {
-            x.className += " responsive";
-            this.setState({
-                menuDisplayed:true,
-            })
-        } else {
-            x.className = "MenuNav";
-            this.setState({
-                menuDisplayed:false,
-            })
-        }
-        console.log(x.className)
-    }
-
-    componentDidMount() {
-        var found = new Glide("#found",{
-            type: 'carousel',
-            autoplay: 2000,
-            perView: 4
-        })
-        found.mount()  
-        var adopt = new Glide("#adopt",{
-            type: 'carousel',
-            focusAt: 'center',
-            autoplay: 2000,
-            perView: 4
-        })
-        adopt.mount()      
-    }
-
-    handleOpenModalRegistro = () => {
-        this.setState({
-            modalVisible:true,
-            type: 'registro'
-        })
-    }
-    handleOpenModalLogin = () => {
-        this.setState({
-            modalVisible:true,
-            type: 'login'
-        })
-    }
-    handleCloseModal = () => {
-        this.setState({
-            modalVisible: false
-        })
-    }
-    render() {
-        return (
-            <div>
-                <Menu handleOpenModal={this.handleOpenModalLogin}
-                      handleDispalyedMenu={this.handleDispalyedMenu}
-                      menuDisplayed={this.menuDisplayed}
-                />
-                <Header handleOpenModal={this.handleOpenModalRegistro}/> 
-                <PerrosEncontrados/>
-                <Adopciones/>
-                <Events/>
-                <Blog/>
-                <Publicidad/> 
-                <Patrocinadores/>
-                <Footer/>
-                {
-                    this.state.modalVisible &&
-                    <ModalContainer handleClick={this.handleCloseModal}>
-                        <Modal handleClick={this.handleCloseModal} type={this.state.type} >
-                            {
-                                this.state.type === 'registro' &&
-                                <Registro/>
-                            }
-
-                            {
-                                this.state.type === 'login' &&
-                                <Login handlerLogin={this.handlerLogin}
-                                        updateAttribute={this.updateAttribute}
-                                />
-                            }
-                        </Modal>
-                    </ModalContainer>
-                }
-            </div>
-        )
-    }
-    
+                        {
+                            type === 'login' &&
+                            <Login handlerLogin={handlerLogin}
+                                    updateAttribute={updateAttribute}
+                            />
+                        }
+                    </Modal>
+                </ModalContainer>
+            }
+        </div>
+    )
 }
+    
+
 
 export default Home;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Glide from '@glidejs/glide'
 
 import Propagator from './Propagator'
@@ -12,7 +11,9 @@ class App extends Component {
     type: '',
     menuDisplayed:false,
     user: '',
-    pass: ''
+    pass: '',
+    loginMessage: '',
+    isLoginSuccessful: false
 }
 // Funciones del Home
 handlerLogin = (e) => {
@@ -31,7 +32,16 @@ handlerLogin = (e) => {
         body: JSON.stringify(obj)
     })
     .then(res => res.json())
-    .then(message => console.log('Comming message: ', message))
+    .then(message => {
+        let comingMessage = message;
+        console.log('Comming message: ',comingMessage.message)
+        if(comingMessage.message == 'ALL OK'){
+            this.setState({isLoginSuccessful: true, loginMessage: ''})
+        }
+        else{
+            this.setState({isLoginSuccessful: false, loginMessage: comingMessage.message})
+        }
+    })
     
     this.setState({user: '', pass: ''})
 }
@@ -102,6 +112,8 @@ handleCloseModal = () => {
       menuDisplayed={this.state.menuDisplayed}
       user={this.state.user}
       pass={this.state.pass}
+      loginMessage={this.state.loginMessage}
+      isLoginSuccessful={this.state.isLoginSuccessful}
       handlerLogin={this.handlerLogin}
       updateAttribute={this.updateAttribute}
       handleDispalyedMenu={this.handleDispalyedMenu}

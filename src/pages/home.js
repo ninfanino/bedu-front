@@ -24,7 +24,7 @@ import Login from '../components/general/login';
 //class Home extends Component {
 const Home = (props) => {
     let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
-        handleCloseModal, modalVisible, type, menuDisplayed, user, pass} = props
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful} = props
 
     return (
         <div>
@@ -53,6 +53,8 @@ const Home = (props) => {
                             type === 'login' &&
                             <Login handlerLogin={handlerLogin}
                                     updateAttribute={updateAttribute}
+                                    loginMessage={loginMessage}
+                                    isLoginSuccessful={isLoginSuccessful}
                             />
                         }
                     </Modal>

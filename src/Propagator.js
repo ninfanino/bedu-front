@@ -7,7 +7,7 @@ import Payment from './pages/payment'
 
 const Propagator = (props) => {
   let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
-    handleCloseModal, modalVisible, type, menuDisplayed, user, pass} = props
+    handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful } = props
   return(
     <Router>
     <div>
@@ -19,6 +19,8 @@ const Propagator = (props) => {
             menuDisplayed={menuDisplayed}
             user={user}
             pass={pass}
+            loginMessage={loginMessage}
+            isLoginSuccessful={isLoginSuccessful}
             handlerLogin={handlerLogin}
             updateAttribute={updateAttribute}
             handleDispalyedMenu={handleDispalyedMenu}

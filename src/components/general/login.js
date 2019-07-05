@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Login = (props) => (
+const Login = (props) => {
+    console.log(props.isLoginSuccessful, props.loginMessage)
+    return(
     <div>
         <div className="nameForm">Inicia sesión en XUXO</div>
         <form>
@@ -17,8 +19,15 @@ const Login = (props) => (
             <div className="btnFormulario">
                 <button className="btnBlog" onClick={props.handlerLogin}>Entrar</button>
             </div>
+            {
+            !props.isLoginSuccessful && 
+                <div className="loginDBMessage">
+                    <a>{props.loginMessage}</a>
+                </div>
+            }
         </form>
     </div>
-)
+    )
+}
 
 export default Login

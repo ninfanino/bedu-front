@@ -9,11 +9,13 @@ const Login = (props) => {
             <div className="fieldsContainer">
                 <div className="item">
                     <input placeholder="Email" className="inputModal" name='user'
-                        onChange={e => props.updateAttribute(e.target)}/>
+                        onChange={e => props.updateAttribute(e.target)}
+                        value={props.user}/>
                 </div>
                 <div className="item">
                     <input placeholder="Contraseña" className="inputModal" name='pass'
-                        onChange={e => props.updateAttribute(e.target)}/>
+                        onChange={e => props.updateAttribute(e.target)}
+                        value={props.pass}/>
                 </div>
             </div>
             <div className="btnFormulario">

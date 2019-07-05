@@ -55,6 +55,8 @@ const Home = (props) => {
                                     updateAttribute={updateAttribute}
                                     loginMessage={loginMessage}
                                     isLoginSuccessful={isLoginSuccessful}
+                                    user={user}
+                                    pass={pass}
                             />
                         }
                     </Modal>

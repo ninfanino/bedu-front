@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import  { Redirect } from 'react-router-dom'
 import Glide from '@glidejs/glide'
+import {BrowserRouter} from 'react-router-dom';
 
 import Propagator from './Propagator'
 
@@ -13,10 +15,25 @@ class App extends Component {
     user: '',
     pass: '',
     loginMessage: '',
-    isLoginSuccessful: false
+    isLoginSuccessful: false,
+    onThisPath: {
+        onHome:true,
+        onDashboard:false
+    }
+    //Variables del estado para el Dashboard
 }
-// Funciones del Home
-handlerLogin = (e) => {
+
+renderRedirect = () => {
+    console.log('Redirecting', this.state.onThisPath.onDashboard, this.state.onThisPath.onHome)
+    //if (this.state.onDashboard) {
+        //this.context.router.history.push(`/target`)
+      //return <Redirect to='/dashboard/' />
+    //}
+  }
+
+  // Funciones del Home
+
+  handlerLogin = (e) => {
     e.preventDefault()
     let obj = {
         user: this.state.user,
@@ -36,19 +53,44 @@ handlerLogin = (e) => {
         let comingMessage = message;
         console.log('Comming message: ',comingMessage.message)
         if(comingMessage.message == 'ALL OK'){
-            this.setState({isLoginSuccessful: true, loginMessage: ''})
+            let preState = this.state.onThisPath;
+            preState.onHome=false;
+            preState.onDashboard=true;
+            this.setState({isLoginSuccessful: true,
+                        loginMessage: '',
+                        modalVisible:true,
+                        onThisPath: preState
+                    })
+            //this.renderRedirect()
         }
         else{
             this.setState({isLoginSuccessful: false, loginMessage: comingMessage.message})
         }
     })
-    
-    this.setState({user: '', pass: ''})
 }
 
 updateAttribute = (e) =>{
     console.log(this.state.user, this.state.pass)
     this.setState({[e.name]: e.value})
+}
+
+updatePathStates = (att)=>{
+    console.log('updatePathState: ',this.state.onThisPath[att.name], att.name,att.value)
+    
+    if(!this.state.onThisPath[att.name]){
+        let preState = this.state.onThisPath
+        for (const prop in preState) {
+            console.log(`preState.${prop} = ${preState[prop]}`);
+            if(prop===att.name){
+                console.log(`Esta es la prop: ${prop}`, !att.value, att.value)
+                preState[prop] = true;
+            }
+            else{
+                preState[prop] = false;
+            }
+        }
+        this.setState({onThisPath: preState})
+    }
 }
 
 handleDispalyedMenu = () => {
@@ -69,19 +111,23 @@ handleDispalyedMenu = () => {
 }
 
 componentDidMount() {
+    console.log('Mounting on home:', this.state.onHome)
+    if(this.state.onThisPath.onHome){
     var found = new Glide("#found",{
         type: 'carousel',
         autoplay: 2000,
         perView: 4
     })
-    found.mount()  
+    
+        found.mount()
     var adopt = new Glide("#adopt",{
         type: 'carousel',
         focusAt: 'center',
         autoplay: 2000,
         perView: 4
     })
-    adopt.mount()      
+        adopt.mount()
+    }
 }
 
 handleOpenModalRegistro = () => {
@@ -104,7 +150,9 @@ handleCloseModal = () => {
 
 //Funciones del dashboard
 
+
   render() { 
+      console.log('Haciendo render ',this.state.user, this.state.pass)
     return ( 
      <Propagator
       modalVisible={this.state.modalVisible}
@@ -112,10 +160,14 @@ handleCloseModal = () => {
       menuDisplayed={this.state.menuDisplayed}
       user={this.state.user}
       pass={this.state.pass}
+      onHome={this.state.onThisPath.onHome}
+      onDashboard={this.state.onThisPath.onDashboard}
+      renderRedirect={this.renderRedirect}
       loginMessage={this.state.loginMessage}
       isLoginSuccessful={this.state.isLoginSuccessful}
       handlerLogin={this.handlerLogin}
       updateAttribute={this.updateAttribute}
+      updatePathStates={this.updatePathStates}
       handleDispalyedMenu={this.handleDispalyedMenu}
       handleOpenModalRegistro={this.handleOpenModalRegistro}
       handleOpenModalLogin={this.handleOpenModalLogin}

@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 
-const Dashboard = () => (
-    <div>Dashboard</div>
+const Dashboard = (props) => (
+    <div>Bienvenido al Dashboard {props.user}! </div>
 )
 
 export default Dashboard

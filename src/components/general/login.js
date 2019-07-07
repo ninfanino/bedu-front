@@ -1,7 +1,8 @@
 import React from 'react'
+import {Link, Redirect} from 'react-router-dom'
 
 const Login = (props) => {
-    console.log(props.isLoginSuccessful, props.loginMessage)
+    let onPath = (props.onDashboard? '/dashboard/': '/')    
     return(
     <div>
         <div className="nameForm">Inicia sesión en XUXO</div>
@@ -19,6 +20,7 @@ const Login = (props) => {
                 </div>
             </div>
             <div className="btnFormulario">
+                <Redirect  to={onPath}/> 
                 <button className="btnBlog" onClick={props.handlerLogin}>Entrar</button>
             </div>
             {
@@ -29,6 +31,7 @@ const Login = (props) => {
             }
         </form>
     </div>
+     
     )
 }
 

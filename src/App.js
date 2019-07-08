@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import  { Redirect } from 'react-router-dom'
 import Glide from '@glidejs/glide'
-import {BrowserRouter} from 'react-router-dom';
-
 import Propagator from './Propagator'
 
 class App extends Component {
@@ -52,7 +49,7 @@ renderRedirect = () => {
     .then(message => {
         let comingMessage = message;
         console.log('Comming message: ',comingMessage.message)
-        if(comingMessage.message == 'ALL OK'){
+        if(comingMessage.message === 'ALL OK'){
             let preState = this.state.onThisPath;
             preState.onHome=false;
             preState.onDashboard=true;

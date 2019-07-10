@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Menu from '../components/home/Menu'
 import Header from '../components/home/header';
 import '../components/fonts.css'
@@ -15,84 +15,57 @@ import ModalContainer from '../components/general/modalContainer';
 import Modal from '../components/general/modal';
 import Registro from '../components/general/registro';
 import Login from '../components/general/login';
-import Glide from '@glidejs/glide'
-import Axios from 'axios';
+
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
 *****/
 
-class Home extends Component {
-    state = {
-        modalVisible:false,
-        type: ''
-    }
+//class Home extends Component {
+const Home = (props) => {
+    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard} = props;
+    return (
+        <div>
+            <Menu handleOpenModal={handleOpenModalLogin}
+                    handleDispalyedMenu={handleDispalyedMenu}
+                    menuDisplayed={menuDisplayed}
+            />
+            <Header handleOpenModal={handleOpenModalRegistro}/> 
+            <PerrosEncontrados/>
+            <Adopciones/>
+            <Events/>
+            <Blog/>
+            <Publicidad/> 
+            <Patrocinadores/>
+            <Footer/>
+            {
+                modalVisible &&
+                <ModalContainer handleClick={handleCloseModal}>
+                    <Modal handleClick={handleCloseModal} type={type} >
+                        {
+                            type === 'registro' &&
+                            <Registro/>
+                        }
 
-    componentDidMount() {
-        var found = new Glide("#found",{
-            type: 'carousel',
-            autoplay: 2000,
-            perView: 4
-        })
-        found.mount()  
-        var adopt = new Glide("#adopt",{
-            type: 'carousel',
-            focusAt: 'center',
-            autoplay: 2000,
-            perView: 4
-        })
-        adopt.mount()      
-    }
-
-    handleOpenModalRegistro = () => {
-        this.setState({
-            modalVisible:true,
-            type: 'registro'
-        })
-    }
-    handleOpenModalLogin = () => {
-        this.setState({
-            modalVisible:true,
-            type: 'login'
-        })
-    }
-    handleCloseModal = () => {
-        this.setState({
-            modalVisible: false
-        })
-    }
-    render() {
-        return (
-            <div>
-                <Menu handleOpenModal={this.handleOpenModalLogin}/>
-                <Header handleOpenModal={this.handleOpenModalRegistro}/> 
-                <PerrosEncontrados/>
-                <Adopciones/>
-                <Events/>
-                <Blog/>
-                <Publicidad/> 
-                <Patrocinadores/>
-                <Footer/>
-                {
-                    this.state.modalVisible &&
-                    <ModalContainer handleClick={this.handleCloseModal}>
-                        <Modal handleClick={this.handleCloseModal} type={this.state.type} >
-                            {
-                                this.state.type === 'registro' &&
-                                <Registro/>
-                            }
-
-                            {
-                                this.state.type === 'login' &&
-                                <Login/>
-                            }
-                        </Modal>
-                    </ModalContainer>
-                }
-            </div>
-        )
-    }
-    
+                        {
+                            type === 'login' &&
+                            <Login handlerLogin={handlerLogin}
+                                    updateAttribute={updateAttribute}
+                                    loginMessage={loginMessage}
+                                    isLoginSuccessful={isLoginSuccessful}
+                                    user={user}
+                                    pass={pass}
+                                    onDashboard={onDashboard}
+                            />
+                        }
+                    </Modal>
+                </ModalContainer>
+            }
+        </div>
+    )
 }
+    
+
 
 export default Home;

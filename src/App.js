@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Glide from '@glidejs/glide'
 import Propagator from './Propagator'
 import Swal from 'sweetalert2'
-import { tsImportEqualsDeclaration } from '@babel/types';
 
 class App extends Component {
 

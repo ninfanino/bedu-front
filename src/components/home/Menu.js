@@ -1,9 +1,10 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 
 
 const Menu = (props) => {
   let {handleOpenModal, handleDispalyedMenu, menuDisplayed} = props
+
   return(
   <div className="Menu">
     <div className="MenuLogo">
@@ -17,6 +18,7 @@ const Menu = (props) => {
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">PERROS ENCONTRADOS</NavLink>
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">EVENTOS</NavLink>
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">DONAR</NavLink>
+      <Link to="/dashboard/" id="DashBoardLink" className="HiddenLink"/>
 
       <button className="MenuIcons">
         <img src="./images/icon-fb.png" alt="Página de Facebook" ></img>

@@ -8,6 +8,7 @@ import Perdidos from '../components/dashboard/perdidos'
 import Encontrados from '../components/dashboard/encontrados'
 import Configuraciones from '../components/dashboard/configuraciones'
 import Logout from '../components/dashboard/logout'
+import MapContainer from '../components/general/mapContainer'
 
 
 const Dashboard = (props) => (
@@ -22,6 +23,7 @@ const Dashboard = (props) => (
         <Configuraciones/>
         <Logout/>
         Bienvenido al Dashboard {props.user}! 
+        <MapContainer/>
     </div>
 )
 

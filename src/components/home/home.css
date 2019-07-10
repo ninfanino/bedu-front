@@ -21,6 +21,10 @@ body {
     color: white;
     margin: 20px;
 }
+.HiddenLink{
+    display: none;
+}
+
 .MenuIcons{
     height: 40px;
     align-content: center;

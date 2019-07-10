@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
 
 const Login = (props) => {
-    let onPath = (props.onDashboard? '/dashboard/': '/')    
+    // let onPath = (props.onDashboard? '/dashboard/': '/')    
     return(
     <div>
         <div className="nameForm">Inicia sesión en XUXO</div>
@@ -20,7 +20,8 @@ const Login = (props) => {
                 </div>
             </div>
             <div className="btnFormulario">
-                <Redirect  to={onPath}/> 
+                {/* <Redirect  to={onPath}/>  */}
+                {/* <Link to='/dashboard/'/> */}
                 <button className="btnBlog" onClick={props.handlerLogin}>Entrar</button>
             </div>
             {

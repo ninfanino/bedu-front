@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import {Link, Redirect} from 'react-router-dom'
 
 import Home from './pages/home'
 import Dashboard from './pages/dashboard'
@@ -17,6 +18,7 @@ const Propagator = (props) => {
         render={
           (props) => {
             updatePathStates({name:'onHome', value:false})
+            console.log('is login successful: ', isLoginSuccessful)
             return(
               <Home {...props}
                 modalVisible={modalVisible}

@@ -25,6 +25,7 @@ import Login from '../components/general/login';
 const Home = (props) => {
     let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
         handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard} = props;
+
     return (
         <div>
             <Menu handleOpenModal={handleOpenModalLogin}

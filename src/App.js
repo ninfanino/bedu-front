@@ -19,15 +19,6 @@ class App extends Component {
     }
     //Variables del estado para el Dashboard
 }
-
-renderRedirect = () => {
-    console.log('Redirecting', this.state.onThisPath.onDashboard, this.state.onThisPath.onHome)
-    //if (this.state.onDashboard) {
-        //this.context.router.history.push(`/target`)
-      //return <Redirect to='/dashboard/' />
-    //}
-  }
-
   // Funciones del Home
 
   handlerLogin = (e) => {
@@ -59,6 +50,8 @@ renderRedirect = () => {
                         onThisPath: preState
                     })
             //this.renderRedirect()
+            let linkToDashboard = document.getElementById('DashBoardLink');
+            linkToDashboard.click();
         }
         else{
             this.setState({isLoginSuccessful: false, loginMessage: comingMessage.message})

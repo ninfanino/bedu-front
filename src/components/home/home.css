@@ -256,17 +256,17 @@ body {
     text-align: center;
     line-height: 30px;
 }
-.item1 { 
+.Publicidad .item1 { 
     grid-area: publicidad1; 
     background: url('/images/publicidad1.jpg');
     background-size: cover;
 }
-.item2 { 
+.Publicidad .item2 { 
     grid-area: publicidad2; 
     background: url('/images/publicidad2.jpg');
     background-size: cover;
 }
-.item3 { 
+.Publicidad .item3 { 
     grid-area: publicidad3; 
     background: url('/images/publicidad3.jpg');
     background-size: cover;
@@ -382,7 +382,7 @@ body {
           'publicidad2 '
           'publicidad3 '
     }
-    .item1, .item2, .item3 {
+    .Publicidad .item1, .Publicidad .item2, .Publicidad .item3 {
         height: 300px;
     }
 }

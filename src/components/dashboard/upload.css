@@ -1,0 +1,18 @@
+.iu-loadContainer {
+    width: 200px;
+    height: 130px;
+    border-radius: 0px;
+}
+.iu-label {
+    display: none;
+}
+.iu-filesInputContainer {
+    margin: 0;
+}
+.iu-dropzone {
+    border-radius: 0px!important;
+    border-color:#e1e2e4 !important;
+}
+.iu-dropzone:hover {
+    background-color:;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Glide from '@glidejs/glide'
 import Propagator from './Propagator'
+import Swal from 'sweetalert2'
 
 class App extends Component {
 
@@ -36,26 +37,52 @@ class App extends Component {
         method : 'POST',
         body: JSON.stringify(obj)
     })
-    .then(res => res.json())
-    .then(message => {
-        let comingMessage = message;
-        console.log('Comming message: ',comingMessage.message)
-        if(comingMessage.message === 'ALL OK'){
-            let preState = this.state.onThisPath;
-            preState.onHome=false;
-            preState.onDashboard=true;
-            this.setState({isLoginSuccessful: true,
-                        loginMessage: '',
-                        modalVisible:true,
-                        onThisPath: preState
-                    })
-            //this.renderRedirect()
+    .then(res => {
+        if (res.status === 200) {
+            let preState = this.state.onThisPath
+            preState.onHome = false
+            preState.onDashboard =  true
+            this.setState({
+                isLoginSuccessful: true,
+                loginMessage: true,
+                modalVisible: false,
+                onThisPath: preState
+            })
             let linkToDashboard = document.getElementById('DashBoardLink');
             linkToDashboard.click();
+        } else {
+            Swal.fire({
+                type: 'warning',
+                title: 'Login inválido',
+                text: 'Has ingresado credenciales de usuario inválidas',
+                confirmButtonText: 'Cerrar'
+            })
         }
-        else{
-            this.setState({isLoginSuccessful: false, loginMessage: comingMessage.message})
-        }
+    })
+    //.then(res => {
+    //    console.log()
+    //    if(comingMessage.message === 'ALL OK'){
+    //        let preState = this.state.onThisPath;
+    //        preState.onHome=false;
+    //        preState.onDashboard=true;
+    //        this.setState({isLoginSuccessful: true,
+    //                    loginMessage: '',
+    //                    modalVisible:true,
+    //                    onThisPath: preState
+    //                })
+    //        //this.renderRedirect()
+    //    }
+    //    else{
+    //        this.setState({isLoginSuccessful: false, loginMessage: comingMessage.message})
+    //    }
+    //})
+    .catch(() => {
+        Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Ocurrió un error inesperado, le recomendamos intentar más tarde',
+            confirmButtonText: 'Cerrar'
+        })
     })
 }
 

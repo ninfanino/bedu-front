@@ -4,8 +4,8 @@ import axios from 'axios';
 const Registro = () => {
 
     const [form, setValues] = useState({
-        name: '',
-        email: ''
+        email: '',
+        password: ''
     })
 
     const updateInput = (e) => {
@@ -16,14 +16,15 @@ const Registro = () => {
     }  
     
     const onSubmit = (e) => {
-        console.log("Si jalo");
         
         e.preventDefault();
-        axios.post('http://localhost:3001/users', {
-            body: form
+        axios.post('http://localhost:3001/register', {
+            form
         })
+        .then(response=>{console.log(response)})
         .then(function (response) {
-          console.log(response);
+            console.log("Si jalo");
+            console.log(response);
         })
         .catch(function (error) {
           console.log(error);
@@ -46,8 +47,8 @@ const Registro = () => {
                     <div className="item">
                         <input 
                             placeholder="Password" 
-                            type="name"
-                            name="name" 
+                            type="password"
+                            name="password" 
                             onChange={e => updateInput(e)}
                             className="inputModal" />
                     </div>

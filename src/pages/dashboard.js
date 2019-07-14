@@ -10,7 +10,9 @@ import MapContainer from '../components/general/mapContainer'
 const Dashboard = (props) => (
     <div className="Dashboard">
         <MenuDashboard/>
-        <Container/>
+        <Container
+            user={props.user}
+        />
         <Ads/>
         <MapContainer/>
     </div>

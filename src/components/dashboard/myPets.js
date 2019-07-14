@@ -6,11 +6,11 @@ import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 
 import './upload.css'
-const MyPets = () => (
+const MyPets = (props) => (
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
-        <div className="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div className="slogan">Aquí podrás ver y editar la información de tus mascotas asosiadas a tu cuenta: {props.user}</div>
 
         <div className="containerPhotos">
             <div className="slidderPhotos">

@@ -1,9 +1,10 @@
 import React from 'react'
 import MyPets from './myPets';
 
-const Container = () => (
+const Container = (props) => (
     <div className="Container">
-        <MyPets/>
+        <MyPets
+            user={props.user}/>
     </div>
 )
 

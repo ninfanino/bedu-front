@@ -63,7 +63,11 @@
   .inputModal {
       padding: 8px 10px;
       width: 100%;
-      box-sizing: border-box;  
+      box-sizing: border-box; 
+      border:1px solid #e1e2e4;
+      font-size: 15px;
+      color: #a59a9a;
+      font-family: 'Raleway', sans-serif;
   }
   .fieldsCheck {
       padding: 20px;

@@ -1,28 +1,17 @@
-import React, { Component }  from 'react'
-import LeftMenu from '../components/dashboard/leftMenu'
-import Mascotas from '../components/dashboard/mascotas'
-import Mensajes from '../components/dashboard/mensajes'
-import Parejas from '../components/dashboard/parejas'
-import Adopciones from '../components/dashboard/adopciones'
-import Perdidos from '../components/dashboard/perdidos'
-import Encontrados from '../components/dashboard/encontrados'
-import Configuraciones from '../components/dashboard/configuraciones'
-import Logout from '../components/dashboard/logout'
+import React from 'react'
+import MenuDashboard from '../components/dashboard/menu';
+
+import '../components/dashboard/dashboard.css'
+import Container from '../components/dashboard/container';
+import Ads from '../components/dashboard/ads';
+
 import MapContainer from '../components/general/mapContainer'
 
-
 const Dashboard = (props) => (
-    <div>
-        <LeftMenu/>
-        <Mascotas/>
-        <Mensajes/>
-        <Parejas/>
-        <Adopciones/>
-        <Perdidos/>
-        <Encontrados/>
-        <Configuraciones/>
-        <Logout/>
-        Bienvenido al Dashboard {props.user}! 
+    <div className="Dashboard">
+        <MenuDashboard/>
+        <Container/>
+        <Ads/>
         <MapContainer/>
     </div>
 )

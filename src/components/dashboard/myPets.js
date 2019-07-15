@@ -4,9 +4,14 @@ import './checkbox.css'
 import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
-
 import './upload.css'
-const MyPets = (props) => (
+
+let  headerObj =      {
+    "access-control-allow-origin": "localhost",
+    "access-control-allow-credentials": "true",
+    mode: "no-cors"
+} 
+const MyPets = (props) => (       
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
@@ -28,12 +33,14 @@ const MyPets = (props) => (
                     <div className="item0">
                         <div className="addPhoto">
                         <ImagesUploader
-                            url="http://localhost:9090/notmultiple"
+                            //headers = {headerObj}
+                            url="http://localhost:3001/image-upload"
                             optimisticPreviews
                             multiple={false}
-                            onLoadEnd={(err) => {
+                            onLoadEnd={(err,res) => {
+                                //console.log(res.json())
                                 if (err) {
-                                    console.error(err);
+                                    console.error('XUXO-ERROR: ', err);
                                 }
                             }}
                             

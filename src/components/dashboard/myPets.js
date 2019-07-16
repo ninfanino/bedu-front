@@ -6,12 +6,17 @@ import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 import './upload.css'
 
-let  headerObj =      {
-    "access-control-allow-origin": "*",
-    "access-control-allow-credentials": "false",
-    mode: "no-cors"
-} 
-const MyPets = (props) => (       
+// let  headerObj =      {
+//     "access-control-allow-origin": "*",
+//     "access-control-allow-credentials": "false",
+//     mode: "no-cors"
+// } 
+
+const MyPets = (props) => {
+    let urlImage=''
+    let { handlerGetImageURL } = props 
+    //{console.log('Props MyPets: ', props)}
+    return(
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
@@ -39,6 +44,8 @@ const MyPets = (props) => (
                             multiple={false}
                             onLoadEnd={(err,res) => {
                                 console.log('Esta es la URL que regresa: ', res)
+                                urlImage=res
+                                handlerGetImageURL(res)
                                 if (err) {
                                     console.error('XUXO-ERROR: ', err);
                                 }
@@ -48,52 +55,93 @@ const MyPets = (props) => (
                         </div>
                     </div>
                     <div className="item1">
-                        <input className="input big" placeholder="Nombre" />
+                        <input className="input big" placeholder="Nombre"
+                            name="petName"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item2">
-                        <input className="input" placeholder="Edad" />
+                        <input className="input" placeholder="Edad"
+                            name="petAge"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item3">
-                        <input className="input" placeholder="Raza" />
+                        <input className="input" placeholder="Raza"
+                            name="petRace"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item4">
-                        <input className="input big" placeholder="Certificado" />
+                        <input className="input big" placeholder="Certificado"
+                            name="petCertificate"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item5">
-                        <input className="input" placeholder="Emergencia" />
+                        <input className="input" placeholder="Emergencia"
+                            name="petEmergency"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item6">
-                        <input className="input" placeholder="Genero" />
+                        <input className="input" placeholder="Genero"
+                            name="petGender"
+                            onChange={e => props.updateAttribute(e.target)}
+                            value={props.petName}
+                        />
                     </div>
                     <div className="item7">
                         <label className="itemCheck">En adopcion
-                            <input type="checkbox" /> 
+                            <input type="checkbox"
+                                name="petAdopt"
+                                onChange={e => props.updateFlag(e.target)}
+                                checked={props.petName}
+                            /> 
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="item8">
                         <label className="itemCheck">Perdido
-                            <input type="checkbox" /> 
+                            <input type="checkbox"
+                                name="petLost"
+                                onChange={e => props.updateFlag(e.target)}
+                                checked={props.petLost}
+                            /> 
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="item9">
                         <label className="itemCheck">Encontrado
-                            <input type="checkbox" /> 
+                            <input type="checkbox"
+                                name="petFound"
+                                onChange={e => props.updateFlag(e.target)}
+                                checked={props.petFound}
+                            /> 
                             <span className="checkmark"></span>
                         </label>
                     </div>
                     <div className="item10">
                         <label className="itemCheck">Buscando pareja
-                            <input type="checkbox" /> 
+                            <input type="checkbox"
+                                name="petInLove"
+                                onChange={e => props.updateFlag(e.target)}
+                                checked={props.petName}
+                            /> 
                             <span className="checkmark"></span>
                         </label>
                     </div>
                 </div>
-                <button className="btnRed">Guardar</button>
+                <button className="btnRed" onClick={e=>props.handlerSaveDash(e,urlImage)}>Guardar</button>
             </form>
         </div>
     </div>
-)
+    )
+}
 
 export default MyPets

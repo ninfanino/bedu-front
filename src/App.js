@@ -19,7 +19,18 @@ class App extends Component {
     onThisPath: {
         onHome:true,
         onDashboard:false
-    }
+    },
+    petName:'',
+    petAge:'',
+    petRace:'',
+    petCertificate:'',
+    petEmergency:'',
+    petGender:'',
+    petAdopt:false,
+    petLost:false,
+    petFound:false,
+    petInLove:false,
+    petURL:''
     //Variables del estado para el Dashboard
 }
   // Funciones del Home
@@ -89,8 +100,23 @@ class App extends Component {
   }
 
 updateAttribute = (e) =>{
-    console.log(this.state.user, this.state.pass)
+
     this.setState({[e.name]: e.value})
+    console.log(this.state.user, this.state.pass, this.state.petName,
+        this.state.petAge,
+        this.state.petRace,
+        this.state.petCertificate,
+        this.state.petEmergency,
+        this.state.petGender
+        )
+}
+
+updateFlag = (e) =>{
+    this.setState({[e.name]: !this.state[e.name]})
+    console.log(this.state.petAdopt,
+        this.state.petLost,
+        this.state.petFound,
+        this.state.petInLove)
 }
 
 updatePathStates = (att)=>{
@@ -169,7 +195,63 @@ handleCloseModal = () => {
 
 //Funciones del dashboard
 
+handlerSaveDash = (e) => {
+    e.preventDefault()
+    let obj = {
+        user: this.state.user,
+        petName:this.state.petName,
+        petAge:this.state.petAge,
+        petRace:this.state.petRace,
+        petCertificate:this.state.petCertificate,
+        petEmergency:this.state.petEmergency,
+        petGender:this.state.petGender,
+        petAdopt:this.state.petAdopt,
+        petLost:this.state.petLost,
+        petFound:this.state.petFound,
+        petInLove:this.state.petInLove,
+        petURL:this.state.petURL
+    }
+    console.log(obj)
 
+    fetch("http://localhost:3001/save-pet", {
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        method : 'POST',
+        body: JSON.stringify(obj)
+    })
+    .then(res => {
+        if (res.status === 200) {
+            this.setState({
+                petName:'',
+                petAge:'',
+                petRace:'',
+                petCertificate:'',
+                petEmergency:'',
+                petGender:'',
+                petAdopt:false,
+                petLost:false,
+                petFound:false,
+                petInLove:false,
+                petURL:''
+            })
+        } else {
+            Swal.fire({
+                type: 'warning',
+                title: 'Error',
+                text: 'Ha ocurrido un error',
+                confirmButtonText: 'Cerrar'
+            })
+        }
+    })
+}
+
+handlerGetImageURL = (urlValue) => {
+    //e.preventDefault()
+    console.log('Cambiando la URL de imagen: ', urlValue )
+    this.setState({petURL: urlValue})
+}
   render() { 
       console.log('Haciendo render ',this.state.user, this.state.pass)
     return ( 
@@ -191,6 +273,19 @@ handleCloseModal = () => {
       handleOpenModalRegistro={this.handleOpenModalRegistro}
       handleOpenModalLogin={this.handleOpenModalLogin}
       handleCloseModal={this.handleCloseModal}
+      petName={this.state.petName}
+      petAge={this.state.petAge}
+      petRace={this.state.petRace}
+      petCertificate={this.state.petCertificate}
+      petEmergency={this.state.petEmergency}
+      petGender={this.state.petGender}
+      petAdopt={this.state.petAdopt}
+      petLost={this.state.petLost}
+      petFound={this.state.petFound}
+      petInLove={this.state.petInLove}
+      updateFlag={this.updateFlag}
+      handlerSaveDash={this.handlerSaveDash}
+      handlerGetImageURL={this.handlerGetImageURL}
       />
     );
   }

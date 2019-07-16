@@ -7,9 +7,10 @@ import Dashboard from './pages/dashboard'
 import Payment from './pages/payment'
 
 const Propagator = (props) => {
+  //console.log('Props Propagator: ', props)
   let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
     handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful,
-    updatePathStates, onHome, onDashboard } = props
+    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL } = props
   return(
     <Router>
     <div>
@@ -49,6 +50,20 @@ const Propagator = (props) => {
               <Dashboard
                 {...props}
                 user={user}
+                petName={props.petName}
+                petAge={props.petAge}
+                petRace={props.petRace}
+                petCertificate={props.petCertificate}
+                petEmergency={props.petEmergency}
+                petGender={props.petGender}
+                petAdopt={props.petAdopt}
+                petLost={props.petLost}
+                petFound={props.petFound}
+                petInLove={props.petInLove}
+                updateAttribute={updateAttribute}
+                updateFlag={updateFlag}
+                handlerSaveDash={handlerSaveDash}
+                handlerGetImageURL={handlerGetImageURL}
               />
             )
           }

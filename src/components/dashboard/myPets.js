@@ -7,8 +7,8 @@ import 'react-images-uploader/font.css';
 import './upload.css'
 
 let  headerObj =      {
-    "access-control-allow-origin": "localhost",
-    "access-control-allow-credentials": "true",
+    "access-control-allow-origin": "*",
+    "access-control-allow-credentials": "false",
     mode: "no-cors"
 } 
 const MyPets = (props) => (       
@@ -38,7 +38,7 @@ const MyPets = (props) => (
                             optimisticPreviews
                             multiple={false}
                             onLoadEnd={(err,res) => {
-                                //console.log(res.json())
+                                console.log('Esta es la URL que regresa: ', res)
                                 if (err) {
                                     console.error('XUXO-ERROR: ', err);
                                 }

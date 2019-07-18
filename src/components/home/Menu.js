@@ -3,7 +3,7 @@ import {NavLink, Link} from 'react-router-dom';
 
 
 const Menu = (props) => {
-  let {handleOpenModal, handleDispalyedMenu, menuDisplayed} = props
+  let {handleOpenModal, handleDispalyedMenu} = props
 
   return(
   <div className="Menu">

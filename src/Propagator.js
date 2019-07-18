@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import {Link, Redirect} from 'react-router-dom'
+//import {Link, Redirect} from 'react-router-dom'
 
 import Home from './pages/home'
 import Dashboard from './pages/dashboard'
 import Payment from './pages/payment'
+import FindPartnerContainer from './pages/dashboardFindPartner';
 
 const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
@@ -42,7 +43,7 @@ const Propagator = (props) => {
           }
         }
       />
-      <Route path="/dashboard/"
+      <Route exact path="/dashboard/"
         render={
           (props) => {
             updatePathStates({name:'onDashboard', value:true})
@@ -64,6 +65,19 @@ const Propagator = (props) => {
                 updateFlag={updateFlag}
                 handlerSaveDash={handlerSaveDash}
                 handlerGetImageURL={handlerGetImageURL}
+              />
+            )
+          }
+        }
+      />
+      <Route path="/dashboard/findPartner"
+        render={
+          (props) => {
+            updatePathStates({name:'onDashboard', value:true})
+            return(
+              <FindPartnerContainer
+                {...props}
+                
               />
             )
           }

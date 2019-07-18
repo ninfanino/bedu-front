@@ -263,6 +263,7 @@ handlerGetImageURL = (urlValue) => {
       pass={this.state.pass}
       onHome={this.state.onThisPath.onHome}
       onDashboard={this.state.onThisPath.onDashboard}
+      onDashboardFindPartner={this.state.onThisPath.onDashboardFindPartner}
       renderRedirect={this.renderRedirect}
       loginMessage={this.state.loginMessage}
       isLoginSuccessful={this.state.isLoginSuccessful}

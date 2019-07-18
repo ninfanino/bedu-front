@@ -156,3 +156,26 @@
     text-align: center;
     line-height: 30px;
 }
+.ContainerGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.itemGrid {
+    width: 31%;
+    height: 290px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.itemGrid .img-mask {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mask.black {
+    background: rgba(0,0,0,.5);
+}
+.itemGrid:hover .mask {
+    display: flex;
+}

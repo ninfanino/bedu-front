@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class MenuDashboard extends Component {
     render () {
@@ -9,7 +10,9 @@ class MenuDashboard extends Component {
                 <ul className="UlDashboard">
                     <li className="itemMenuDashboard myPets"></li>
                     <li className="itemMenuDashboard notifications"></li>
-                    <li className="itemMenuDashboard findPartner"></li>
+                    <NavLink to="/dashboard/findPartner">
+                        <li className="itemMenuDashboard findPartner"></li>
+                    </NavLink>
                     <li className="itemMenuDashboard provisionalHome"></li>
                     <li className="itemMenuDashboard findPet"></li>
                     <li className="itemMenuDashboard adoptions"></li>

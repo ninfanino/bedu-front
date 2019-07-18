@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
+//import {Link, Redirect} from 'react-router-dom'
 
 const Login = (props) => {
     // let onPath = (props.onDashboard? '/dashboard/': '/')    
@@ -27,7 +27,7 @@ const Login = (props) => {
             {
             !props.isLoginSuccessful && 
                 <div className="loginDBMessage">
-                    <a>{props.loginMessage}</a>
+                    <div>{props.loginMessage}</div>
                 </div>
             }
         </form>

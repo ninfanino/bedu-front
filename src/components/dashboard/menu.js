@@ -8,9 +8,11 @@ class MenuDashboard extends Component {
                 <img src="/images/logo-header.png" alt="Xuxo" className="LogoDashboard" />
 
                 <ul className="UlDashboard">
-                    <li className="itemMenuDashboard myPets"></li>
+                    <NavLink to="/dashboard" exact activeClassName="selectedLink">
+                        <li className="itemMenuDashboard myPets"></li>
+                    </NavLink>
                     <li className="itemMenuDashboard notifications"></li>
-                    <NavLink to="/dashboard/findPartner">
+                    <NavLink to="/dashboard/findPartner" activeClassName="selectedLink">
                         <li className="itemMenuDashboard findPartner"></li>
                     </NavLink>
                     <li className="itemMenuDashboard provisionalHome"></li>

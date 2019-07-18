@@ -9,6 +9,10 @@ class containerFindPartner extends Component {
         }
         return(
             <div className="Container">
+                <div className="title">encuentra pareja</div>
+                <div className="lineGreen left"></div>
+                <div className="slogan">Lorem ipsum</div>
+
                 <div className="ContainerGrid">
                     { grid }
                 </div>

@@ -5,7 +5,6 @@
   "dependencies": {
     "@glidejs/glide": "^3.3.0",
     "axios": "^0.19.0",
-    "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-images-uploader": "^1.2.0-rc1",

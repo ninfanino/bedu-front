@@ -11,7 +11,7 @@ const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
   let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
     handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful,
-    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL } = props
+    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit } = props
   return(
     <Router>
     <div>
@@ -33,11 +33,16 @@ const Propagator = (props) => {
                 loginMessage={loginMessage}
                 isLoginSuccessful={isLoginSuccessful}
                 handlerLogin={handlerLogin}
+                updateFlag={updateFlag}
                 updateAttribute={updateAttribute}
                 handleDispalyedMenu={handleDispalyedMenu}
                 handleOpenModalRegistro={handleOpenModalRegistro}
                 handleOpenModalLogin={handleOpenModalLogin}
                 handleCloseModal={handleCloseModal}
+                regEmail={props.regEmail}
+                regPass={props.regPass}
+                regAgreement={props.regAgreement}
+                onSubmit={onSubmit}
               />
             )
           }

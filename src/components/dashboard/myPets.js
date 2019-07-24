@@ -20,7 +20,7 @@ const MyPets = (props) => {
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
-        <div className="slogan">Aquí podrás ver y editar la información de tus mascotas asosiadas a tu cuenta: {props.user}</div>
+        <div className="slogan">Aquí podrás ver y editar la información de las mascotas asosiadas a tu cuenta: {props.user}</div>
 
         <div className="containerPhotos">
             <div className="slidderPhotos">

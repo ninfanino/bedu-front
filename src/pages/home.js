@@ -23,8 +23,8 @@ import Login from '../components/general/login';
 
 //class Home extends Component {
 const Home = (props) => {
-    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
-        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard} = props;
+    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,updateFlag,
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit} = props;
 
     return (
         <div>
@@ -46,7 +46,14 @@ const Home = (props) => {
                     <Modal handleClick={handleCloseModal} type={type} >
                         {
                             type === 'registro' &&
-                            <Registro/>
+                            <Registro
+                                regEmail={props.regEmail}
+                                regPass={props.regPass}
+                                regAgreement={props.regAgreement}
+                                updateAttribute={updateAttribute}
+                                onSubmit={onSubmit}
+                                updateFlag={updateFlag}
+                            />
                         }
 
                         {

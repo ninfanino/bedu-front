@@ -14,6 +14,7 @@ class App extends Component {
     pass: '',
     regEmail: '',
     regPass: '',
+    regAgreement: false,
     loginMessage: '',
     isLoginSuccessful: false,
     onThisPath: {
@@ -34,6 +35,72 @@ class App extends Component {
     //Variables del estado para el Dashboard
 }
   // Funciones del Home
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    let form = {
+        email: this.state.regEmail,
+        password: this.state.regPass
+    }
+    console.log("Entrando al boton", form)
+    if(this.state.regAgreement){
+        fetch("http://localhost:3001/register", {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method : 'POST',
+            body: JSON.stringify(form)
+        })
+        .then(res => {
+            if (res.status === 200) {
+                let preState = this.state.onThisPath
+                preState.onHome = false
+                preState.onDashboard =  true
+                this.setState({
+                    isLoginSuccessful: true,
+                    loginMessage: true,
+                    modalVisible: false,
+                    onThisPath: preState,
+                    user: form.email
+                })
+                let linkToDashboard = document.getElementById('DashBoardLink');
+                linkToDashboard.click();
+            } else {
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Registro inválido',
+                    text: 'El usuario que intentas registrar ya existe!',
+                    confirmButtonText: 'Cerrar'
+                })
+            }
+        })
+        // axios.post('http://localhost:3001/register', {
+        //     form
+        // })
+        // .then(response=>{console.log(response)})
+        // .then(function (response) {
+        //     console.log("Si jalo");
+        //     console.log(response);
+        // })
+        .catch(function (error) {
+            Swal.fire({
+                type: 'error',
+                title: 'Error',
+                text: 'Ocurrió un error inesperado, le recomendamos intentar más tarde',
+                confirmButtonText: 'Cerrar'
+            })
+        });
+    }
+    else{
+        Swal.fire({
+            type: 'warning',
+            title: '',
+            text: 'No has aceptado los terminos y condiciones',
+            confirmButtonText: 'Cerrar'
+        })
+    }
+}
 
   handlerLogin = (e) => {
     e.preventDefault()
@@ -102,7 +169,9 @@ class App extends Component {
 updateAttribute = (e) =>{
 
     this.setState({[e.name]: e.value})
-    console.log(this.state.user, this.state.pass, this.state.petName,
+    console.log(this.state.regEmail, this.state.user, this.state.pass, this.state.petName,
+        
+        this.state.regPass,
         this.state.petAge,
         this.state.petRace,
         this.state.petCertificate,
@@ -117,6 +186,7 @@ updateFlag = (e) =>{
         this.state.petLost,
         this.state.petFound,
         this.state.petInLove)
+    console.log(this.state.regAgreement)
 }
 
 updatePathStates = (att)=>{
@@ -287,6 +357,10 @@ handlerGetImageURL = (urlValue) => {
       updateFlag={this.updateFlag}
       handlerSaveDash={this.handlerSaveDash}
       handlerGetImageURL={this.handlerGetImageURL}
+      regEmail={this.state.regEmail}
+      regPass={this.state.regPass}
+      regAgreement={this.state.regAgreement}
+      onSubmit={this.onSubmit}
       />
     );
   }

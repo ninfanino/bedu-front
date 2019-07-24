@@ -2,24 +2,44 @@ import React, { Component } from 'react'
 import ItemFindPartner from './itemGrid';
 import ModalFindPartner from './modalFindPartner';
 
-class containerFindPartner extends Component {
-    
+class containerFindPartner extends Component {  
     state = {
-        modalFindPartner: false
+        modalFindPartner: false,
+        modalInfo:'',
+        data: []
     }
-    handleOpenModal = (e) => {
-        this.setState({modalFindPartner: !this.state.modalFindPartner})
+    componentDidMount(){
+        this.getInfo()
+    }
+    handleOpenModal = (key) => {
+        this.setState({
+            modalFindPartner: !this.state.modalFindPartner,
+            modalInfo: this.state.data[key]
+        })
     }
     handleCloseModal = (e) => {
-        this.setState({modalFindPartner: false})
+        this.setState({
+            modalFindPartner: false,
+            modalInfo:''
+        })
     }
 
-    render() {
+    getInfo() {
+        fetch('http://localhost:3001/lovers')
+        .then(response => response.json())
+        .then(data=> {
+          this.setState({
+            data: data
+          });
+          
+        });
         
-        const grid = [];
-        for(let i = 0; i < 9; i++) {
-            grid.push(<ItemFindPartner key={i} handleOpenModal={this.handleOpenModal} />);
-        }
+      };
+
+    render() {
+        const grid = this.state.data.map((item, key) => 
+            <ItemFindPartner key={key} handleOpenModal={() => {this.handleOpenModal(key)}} item={item}/>
+        );
         return(
             <div className="Container">
                 <div className="title">encuentra pareja</div>
@@ -30,7 +50,7 @@ class containerFindPartner extends Component {
                     { grid }
                 </div>
                 {
-                    this.state.modalFindPartner ? <ModalFindPartner handleClick={this.handleCloseModal}/> : ''
+                    this.state.modalFindPartner ? <ModalFindPartner handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} /> : ''
                 }
                 
             </div>

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { Redirect } from 'react-router-dom'
+
 import MenuDashboard from '../components/dashboard/menu';
 
 import '../components/dashboard/dashboard.css'
@@ -6,31 +8,37 @@ import Container from '../components/dashboard/container';
 import Ads from '../components/dashboard/ads';
 
 
-const Dashboard = (props) => {
-    //{console.log('Props Dashboard: ', props)}
-    return(
-    <div className="Dashboard">
-        <MenuDashboard/>
-        <Container
-            user={props.user}
-            petName={props.petName}
-            petAge={props.petAge}
-            petRace={props.petRace}
-            petCertificate={props.petCertificate}
-            petEmergency={props.petEmergency}
-            petGender={props.petGender}
-            petAdopt={props.petAdopt}
-            petLost={props.petLost}
-            petFound={props.petFound}
-            petInLove={props.petInLove}
-            updateAttribute={props.updateAttribute}
-            updateFlag={props.updateFlag}
-            handlerSaveDash={props.handlerSaveDash}
-            handlerGetImageURL={props.handlerGetImageURL}
-        />
-        <Ads/>
-    </div>
-    )
+class Dashboard extends Component {
+    
+    render() {
+        
+        if(!sessionStorage.getItem('user')) {
+            return <Redirect to='/home' />
+        }
+        return(
+            <div className="Dashboard">
+            <MenuDashboard/>
+            <Container
+                user={this.props.user}
+                petName={this.props.petName}
+                petAge={this.props.petAge}
+                petRace={this.props.petRace}
+                petCertificate={this.props.petCertificate}
+                petEmergency={this.props.petEmergency}
+                petGender={this.props.petGender}
+                petAdopt={this.props.petAdopt}
+                petLost={this.props.petLost}
+                petFound={this.props.petFound}
+                petInLove={this.props.petInLove}
+                updateAttribute={this.props.updateAttribute}
+                updateFlag={this.props.updateFlag}
+                handlerSaveDash={this.props.handlerSaveDash}
+                handlerGetImageURL={this.props.handlerGetImageURL}
+            />
+            <Ads/>
+        </div>
+        )
+    }
 }
 
 export default Dashboard

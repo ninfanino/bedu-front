@@ -64,6 +64,7 @@ class App extends Component {
                     onThisPath: preState,
                     user: form.email
                 })
+                sessionStorage.user = form.email
                 let linkToDashboard = document.getElementById('DashBoardLink');
                 linkToDashboard.click();
             } else {
@@ -128,6 +129,7 @@ class App extends Component {
                 modalVisible: false,
                 onThisPath: preState
             })
+            sessionStorage.user = this.state.user;
             let linkToDashboard = document.getElementById('DashBoardLink');
             linkToDashboard.click();
         } else {

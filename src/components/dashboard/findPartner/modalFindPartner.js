@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ModalFindPartner = (props) => {
-    const { modalInfo, handleLike, like, handleInputChange } = props
+    const { modalInfo, handleLike, like, handleInputChange, handleSendMessage, activeBtn } = props
     return(
         <div className="ModalBox dashboard">  
             <div className="Modal">
@@ -34,7 +34,8 @@ const ModalFindPartner = (props) => {
                                 
                             </button>
                             <textarea className="photoMessage" placeholder="Envia un mensaje" name="Mensaje" onChange={handleInputChange}></textarea>
-                            <button className="btnRed">
+                            
+                            <button className={activeBtn ? "btnRed" : "btnRed disabled" } onClick={handleSendMessage}>
                                 Enviar
                             </button>
                         </div>

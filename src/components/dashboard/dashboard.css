@@ -156,6 +156,10 @@
     text-align: center;
     line-height: 30px;
 }
+.btnRed.disabled {
+    background: #a59a9a;
+    cursor: default;
+}
 .ContainerGrid {
     display: flex;
     flex-wrap: wrap;

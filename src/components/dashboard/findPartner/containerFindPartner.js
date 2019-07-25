@@ -7,7 +7,8 @@ class containerFindPartner extends Component {
         modalFindPartner: false,
         modalInfo:'',
         like:false,
-        data: []
+        data: [],
+        Mensaje:''
     }
     componentDidMount(){
         this.getInfo()
@@ -15,14 +16,17 @@ class containerFindPartner extends Component {
     handleOpenModal = (key) => {
         this.setState({
             modalFindPartner: !this.state.modalFindPartner,
-            modalInfo: this.state.data[key]
+            modalInfo: this.state.data[key],
+            destinatario: this.state.data[key].owner
         })
     }
     handleCloseModal = (e) => {
         this.setState({
             modalFindPartner: false,
             modalInfo:'',
-            like:false
+            like:false,
+            destinatario:'',
+            Mensaje:''
         })
     }
     handleInputChange = event => {
@@ -52,6 +56,15 @@ class containerFindPartner extends Component {
         })
     }
 
+    handleSendMessage = () => {
+        let envia = sessionStorage.getItem('user');
+        let like = this.state.like;
+        let mensaje = this.state.Mensaje;
+        let destinatario = this.state.destinatario;
+        
+        /* aqui se manda al endpoint */
+    }
+
     render() {
         const grid = this.state.data.map((item, key) => 
             <ItemFindPartner key={key} handleOpenModal={() => {this.handleOpenModal(key)}} item={item}/>
@@ -66,7 +79,7 @@ class containerFindPartner extends Component {
                     { grid }
                 </div>
                 {
-                    this.state.modalFindPartner ? <ModalFindPartner handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} handleLike={this.handleLike} like={this.state.like} handleInputChange={this.handleInputChange} /> : ''
+                    this.state.modalFindPartner ? <ModalFindPartner activeBtn={this.state.Mensaje} handleSendMessage={this.handleSendMessage} handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} handleLike={this.handleLike} like={this.state.like} handleInputChange={this.handleInputChange} /> : ''
                 }
                 
             </div>

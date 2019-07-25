@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ModalFindPartner = (props) => {
-    const { modalInfo } = props
+    const { modalInfo, handleLike, like, handleInputChange } = props
     return(
         <div className="ModalBox dashboard">  
             <div className="Modal">
@@ -26,10 +26,14 @@ const ModalFindPartner = (props) => {
                             </div>
                         </div>
                         <div>
-                            <button className="photoLike">
-                                <img src="../images/icon-dates.png" alt="Dog" width={30} />
+                            <button className="photoLike" onClick={handleLike}>
+                                {
+                                    like ? <img src="../images/icon-dates-hover.png" alt="Dog" width={30} /> :
+                                    <img src="../images/icon-dates.png" alt="Dog" width={30} />
+                                }
+                                
                             </button>
-                            <textarea className="photoMessage" placeholder="Envia un mensaje"></textarea>
+                            <textarea className="photoMessage" placeholder="Envia un mensaje" name="Mensaje" onChange={handleInputChange}></textarea>
                             <button className="btnRed">
                                 Enviar
                             </button>

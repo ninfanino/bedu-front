@@ -8,7 +8,8 @@ class containerFindPartner extends Component {
         modalInfo:'',
         like:false,
         data: [],
-        Mensaje:''
+        Mensaje:'',
+        mascota:''
     }
     componentDidMount(){
         this.getInfo()
@@ -17,7 +18,8 @@ class containerFindPartner extends Component {
         this.setState({
             modalFindPartner: !this.state.modalFindPartner,
             modalInfo: this.state.data[key],
-            destinatario: this.state.data[key].owner
+            destinatario: this.state.data[key].owner,
+            mascota: this.state.data[key].name
         })
     }
     handleCloseModal = (e) => {
@@ -63,6 +65,7 @@ class containerFindPartner extends Component {
             like : this.state.like,
             mensaje : this.state.Mensaje,
             destinatario : this.state.destinatario,
+            mascota: this.state.mascota,
             fecha: newDate
         }
         fetch("http://localhost:3001/post-message", {

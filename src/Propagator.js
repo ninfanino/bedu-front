@@ -8,6 +8,7 @@ import Payment from './pages/payment'
 import FindPartnerContainer from './pages/dashboardFindPartner';
 import FoundContainer from './pages/dashboardFound';
 import LostContainer from './pages/dashboardLost';
+import AdoptionsContainer from './pages/dashboardAdoptions';
 
 const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
@@ -109,6 +110,19 @@ const Propagator = (props) => {
             updatePathStates({name:'onDashboard', value:true})
             return(
               <LostContainer
+                {...props}
+                
+              />
+            )
+          }
+        }
+      />
+      <Route path="/dashboard/adoptions"
+        render={
+          (props) => {
+            updatePathStates({name:'onDashboard', value:true})
+            return(
+              <AdoptionsContainer
                 {...props}
                 
               />

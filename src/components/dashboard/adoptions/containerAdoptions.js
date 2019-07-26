@@ -50,7 +50,31 @@ class ContainerAdoptions extends Component {
         });
     };
     handleSendMessage = () => {
-        console.log('Mensaje enviado')
+        let newDate = new Date()
+        let obj = {
+            envia : sessionStorage.getItem('user'),
+            like : this.state.like,
+            mensaje : this.state.Mensaje,
+            destinatario : this.state.destinatario,
+            mascota: this.state.mascota,
+            fecha: newDate
+        }
+        fetch("http://localhost:3001/post-message", {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method : 'POST',
+            body: JSON.stringify(obj)
+        })
+        .then(res => {
+            if (res.status === 200) {
+                console.log('Mensaje enviado')
+            }
+            else{
+                console.log('Error')
+            }
+        })
     }
     render() {
         const grid = this.state.data.map((item, key) => 

@@ -18,7 +18,9 @@ class MenuDashboard extends Component {
                     <NavLink to="/dashboard/found" activeClassName="selectedLink">
                         <li className="itemMenuDashboard provisionalHome"></li>
                     </NavLink>
-                    <li className="itemMenuDashboard findPet"></li>
+                    <NavLink to="/dashboard/lost" activeClassName="selectedLink">
+                        <li className="itemMenuDashboard findPet"></li>
+                    </NavLink>
                     <li className="itemMenuDashboard adoptions"></li>
                     <li className="itemMenuDashboard settings"></li>
                     <li className="itemMenuDashboard logout"></li>

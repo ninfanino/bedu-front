@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ModalFound = (props) => {
+const ModalLike = (props) => {
     const { modalInfo, handleInputChange, handleSendMessage, activeBtn } = props
     return(
         <div className="ModalBox dashboard">  
@@ -40,4 +40,4 @@ const ModalFound = (props) => {
     )
 }
 
-export default ModalFound
+export default ModalLike

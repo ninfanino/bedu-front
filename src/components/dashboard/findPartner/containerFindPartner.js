@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ItemFindPartner from './itemGrid';
+import ItemGrid from '../general/itemGrid';
 import ModalFindPartner from './modalFindPartner';
 
 class containerFindPartner extends Component {  
@@ -88,7 +88,7 @@ class containerFindPartner extends Component {
 
     render() {
         const grid = this.state.data.map((item, key) => 
-            <ItemFindPartner key={key} handleOpenModal={() => {this.handleOpenModal(key)}} item={item}/>
+            <ItemGrid key={key} handleOpenModal={() => {this.handleOpenModal(key)}} item={item}/>
         );
         return(
             <div className="Container">

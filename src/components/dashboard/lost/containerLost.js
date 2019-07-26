@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import ItemGrid from '../general/itemGrid';
 import Modal from '../general/modal';
 
-class ContainerFound extends Component {  
+
+class ContainerLost extends Component {  
     state = {
-        modalFound: false,
+        modalLost: false,
         modalInfo:'',
         data: [],
         Mensaje:''
@@ -13,15 +14,15 @@ class ContainerFound extends Component {
         this.getInfo()
     }
     handleOpenModal = (key) => {
-        this.setState({
-            modalFound: !this.state.modalFound,
+         this.setState({
+            modalLost: !this.state.modalLost,
             modalInfo: this.state.data[key],
             destinatario: this.state.data[key].owner
         })
     }
     handleCloseModal = (e) => {
         this.setState({
-            modalFound: false,
+            modalLost: false,
             modalInfo:'',
             destinatario:'',
             Mensaje:''
@@ -37,7 +38,8 @@ class ContainerFound extends Component {
         })
     }
     getInfo() {
-        fetch('http://localhost:3001/found')
+        console.log('perdidos')
+        fetch('http://localhost:3001/lost')
         .then(response => response.json())
         .then(data=> {
           this.setState({
@@ -55,7 +57,7 @@ class ContainerFound extends Component {
         );
         return(
             <div className="Container">
-                <div className="title">perros encontrados</div>
+                <div className="title">perros perdidos</div>
                 <div className="lineGreen left"></div>
                 <div className="slogan">Lorem ipsum</div>
 
@@ -63,7 +65,7 @@ class ContainerFound extends Component {
                     { grid }
                 </div>
                 {
-                    this.state.modalFound ? <Modal activeBtn={this.state.Mensaje} handleSendMessage={this.handleSendMessage} handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} handleInputChange={this.handleInputChange} /> : ''
+                    this.state.modalLost ? <Modal activeBtn={this.state.Mensaje} handleSendMessage={this.handleSendMessage} handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} handleInputChange={this.handleInputChange} /> : ''
                 }
             </div>
         )
@@ -71,4 +73,4 @@ class ContainerFound extends Component {
     
 }
 
-export default ContainerFound;
+export default ContainerLost;

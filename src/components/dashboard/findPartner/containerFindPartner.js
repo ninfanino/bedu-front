@@ -57,12 +57,30 @@ class containerFindPartner extends Component {
     }
 
     handleSendMessage = () => {
-        let envia = sessionStorage.getItem('user');
-        let like = this.state.like;
-        let mensaje = this.state.Mensaje;
-        let destinatario = this.state.destinatario;
-        
-        /* aqui se manda al endpoint */
+        let newDate = new Date()
+        let obj = {
+            envia : sessionStorage.getItem('user'),
+            like : this.state.like,
+            mensaje : this.state.Mensaje,
+            destinatario : this.state.destinatario,
+            fecha: newDate
+        }
+        fetch("http://localhost:3001/post-message", {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            method : 'POST',
+            body: JSON.stringify(obj)
+        })
+        .then(res => {
+            if (res.status === 200) {
+                console.log('Mensaje enviado')
+            }
+            else{
+                console.log('Error')
+            }
+        })
     }
 
     render() {

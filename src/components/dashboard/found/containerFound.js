@@ -1,17 +1,40 @@
 import React, { Component } from 'react'
 import ItemFound from './itemGrid';
-/*import ItemFindPartner from './itemGrid';
-import ModalFindPartner from './modalFindPartner';*/
+import ModalFound from './modalFound';
 
 class ContainerFound extends Component {  
     state = {
-        data: []
+        modalFound: false,
+        modalInfo:'',
+        data: [],
+        Mensaje:''
     }
     componentDidMount(){
         this.getInfo()
     }
     handleOpenModal = (key) => {
-        console.log(key)
+        this.setState({
+            modalFound: !this.state.modalFound,
+            modalInfo: this.state.data[key],
+            destinatario: this.state.data[key].owner
+        })
+    }
+    handleCloseModal = (e) => {
+        this.setState({
+            modalFound: false,
+            modalInfo:'',
+            destinatario:'',
+            Mensaje:''
+        })
+    }
+    handleInputChange = event => {
+        const target = event.target
+        const value = target.value
+        const name = target.name
+    
+        this.setState({
+          [name]: value,
+        })
     }
     getInfo() {
         fetch('http://localhost:3001/found')
@@ -23,6 +46,9 @@ class ContainerFound extends Component {
           
         });
     };
+    handleSendMessage = () => {
+        console.log('enviar mensaje')
+    }
     render() {
         const grid = this.state.data.map((item, key) => 
             <ItemFound key={key} handleOpenModal={() => {this.handleOpenModal(key)}} item={item}/>
@@ -36,7 +62,9 @@ class ContainerFound extends Component {
                 <div className="ContainerGrid">
                     { grid }
                 </div>
-                
+                {
+                    this.state.modalFound ? <ModalFound activeBtn={this.state.Mensaje} handleSendMessage={this.handleSendMessage} handleClick={this.handleCloseModal} modalInfo={this.state.modalInfo} handleInputChange={this.handleInputChange} /> : ''
+                }
             </div>
         )
     }

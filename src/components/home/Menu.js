@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
-
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Menu = (props) => {
   let {handleOpenModal, handleDispalyedMenu} = props
@@ -15,8 +15,8 @@ const Menu = (props) => {
     </div>
     <div className="MenuNav" id="MenuList">
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">EMERGENCIAS</NavLink>
-      <NavLink to="/" activeClassName="isSelected" className="MenuOptions">PERROS ENCONTRADOS</NavLink>
-      <NavLink to="/" activeClassName="isSelected" className="MenuOptions">EVENTOS</NavLink>
+      <AnchorLink href='#perrosEncontrados' className="MenuOptions">PERROS ENCONTRADOS</AnchorLink>
+      <AnchorLink href='#eventos' className="MenuOptions">EVENTOS</AnchorLink>
       <NavLink to="/" activeClassName="isSelected" className="MenuOptions">DONAR</NavLink>
       <Link to="/dashboard/" id="DashBoardLink" className="HiddenLink"/>
 

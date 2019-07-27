@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Events = () => (
-    <div className="Events">
+    <div className="Events" id="eventos">
         <div className="titleHeader">
             festival de la adopción
         </div>

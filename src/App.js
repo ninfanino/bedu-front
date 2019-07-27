@@ -228,7 +228,7 @@ handleDispalyedMenu = () => {
 }
 
 componentDidMount() {
-    console.log('Mounting on home:', this.state.onHome)
+    console.log('Mounting on home:', this.state.onThisPath.onHome)
     if(this.state.onThisPath.onHome){
     var found = new Glide("#found",{
         type: 'carousel',
@@ -325,7 +325,7 @@ handlerGetImageURL = (urlValue) => {
     this.setState({petURL: urlValue})
 }
   render() { 
-      console.log('Haciendo render ',this.state.user, this.state.pass)
+      console.log(`Haciendo render: User: ${this.state.user}, Pass: ${this.state.pass}`)
     return ( 
      <Propagator
       modalVisible={this.state.modalVisible}

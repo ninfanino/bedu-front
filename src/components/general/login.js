@@ -15,6 +15,7 @@ const Login = (props) => {
                 </div>
                 <div className="item">
                     <input placeholder="Contraseña" className="inputModal" name='pass'
+                        type="password"
                         onChange={e => props.updateAttribute(e.target)}
                         value={props.pass}/>
                 </div>

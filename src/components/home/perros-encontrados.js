@@ -30,7 +30,7 @@ var found = [
 const PerrosEncontrados = () => {
 
     return (
-        <div className="PerrosEncontrados">
+        <div className="PerrosEncontrados" id="perrosEncontrados">
             <div className="title">
                 perros encontrados
             </div>

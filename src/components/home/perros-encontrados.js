@@ -27,8 +27,7 @@ var found = [
     }
 ]
 
-const PerrosEncontrados = () => {
-
+const PerrosEncontrados = (props) => {
     return (
         <div className="PerrosEncontrados" id="perrosEncontrados">
             <div className="title">

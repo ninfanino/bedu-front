@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Menu from '../components/home/Menu'
 import Header from '../components/home/header';
 import '../components/fonts.css'
@@ -21,11 +21,17 @@ import Login from '../components/general/login';
  * Header necesita enviar una funcion para abrir el formulario de registro
 *****/
 
-//class Home extends Component {
-const Home = (props) => {
+class Home extends Component {
+    componentDidMount() {
+        console.log('Mounting on Home!')
+        this.props.glider()
+    }
+    render(){
     let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,updateFlag,
-        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit} = props;
-
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit, glider} = this.props;
+        // componentDidMount() {
+        //     props.glider()
+        // }
     return (
         <div>
             <Menu handleOpenModal={handleOpenModalLogin}
@@ -47,9 +53,9 @@ const Home = (props) => {
                         {
                             type === 'registro' &&
                             <Registro
-                                regEmail={props.regEmail}
-                                regPass={props.regPass}
-                                regAgreement={props.regAgreement}
+                                regEmail={this.props.regEmail}
+                                regPass={this.props.regPass}
+                                regAgreement={this.props.regAgreement}
                                 updateAttribute={updateAttribute}
                                 onSubmit={onSubmit}
                                 updateFlag={updateFlag}
@@ -72,6 +78,7 @@ const Home = (props) => {
             }
         </div>
     )
+    }
 }
     
 

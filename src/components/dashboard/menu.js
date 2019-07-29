@@ -5,8 +5,9 @@ class MenuDashboard extends Component {
     render () {
         return (
             <div className="MenuDashboard">
-                <img src="/images/logo-header.png" alt="Xuxo" className="LogoDashboard" />
-
+                <NavLink to={{pathname: "/home", state: { fromDashboard: true }}} activeClassName="selectedLink">
+                    <img src="/images/logo-header.png" alt="Xuxo" className="LogoDashboard" />
+                </NavLink>
                 <ul className="UlDashboard">
                     <NavLink to="/dashboard" exact activeClassName="selectedLink">
                         <li className="itemMenuDashboard myPets"></li>

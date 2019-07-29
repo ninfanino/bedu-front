@@ -2,7 +2,7 @@ import React from 'react'
 import MyPets from './myPets';
 
 const Container = (props) => {
-//    {console.log('Props Container: ', props)}
+    console.log('Mascotas en Container',props.registeredData )
     return(
     <div className="Container">
         <MyPets
@@ -21,6 +21,7 @@ const Container = (props) => {
             updateFlag={props.updateFlag}
             handlerSaveDash={props.handlerSaveDash}
             handlerGetImageURL={props.handlerGetImageURL}
+            registerData={props.registerData}
         />
             
     </div>

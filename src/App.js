@@ -31,10 +31,24 @@ class App extends Component {
     petLost:false,
     petFound:false,
     petInLove:false,
-    petURL:''
+    petURL:'',
+    registerData:[],
     //Variables del estado para el Dashboard
+    adopt : new Glide("#adopt",{
+        type: 'carousel',
+        focusAt: 'center',
+        autoplay: 2000,
+        perView: 4
+    }),
+    found : new Glide("#found",{
+        type: 'carousel',
+        autoplay: 2000,
+        perView: 4
+    })
 }
   // Funciones del Home
+
+  
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -191,8 +205,13 @@ updateFlag = (e) =>{
     console.log(this.state.regAgreement)
 }
 
+glider = () => {
+    this.state.found.mount()
+    this.state.adopt.mount()
+}
+
 updatePathStates = (att)=>{
-    console.log('updatePathState: ',this.state.onThisPath[att.name], att.name,att.value)
+    console.log('updatePathState: ',this.state.onThisPath[att.name], att.name,att.value, this.state)
     
     if(!this.state.onThisPath[att.name]){
         let preState = this.state.onThisPath
@@ -228,22 +247,9 @@ handleDispalyedMenu = () => {
 }
 
 componentDidMount() {
-    console.log('Mounting on home:', this.state.onThisPath.onHome)
+    console.log('Mounting on App:', this.state.onThisPath.onHome)
     if(this.state.onThisPath.onHome){
-    var found = new Glide("#found",{
-        type: 'carousel',
-        autoplay: 2000,
-        perView: 4
-    })
-    
-        found.mount()
-    var adopt = new Glide("#adopt",{
-        type: 'carousel',
-        focusAt: 'center',
-        autoplay: 2000,
-        perView: 4
-    })
-        adopt.mount()
+        //this.glider()
     }
 }
 
@@ -254,10 +260,16 @@ handleOpenModalRegistro = () => {
     })
 }
 handleOpenModalLogin = () => {
-    this.setState({
-        modalVisible:true,
-        type: 'login'
-    })
+    if(this.state.user!==''){
+        let linkToDashboard = document.getElementById('DashBoardLink');
+        linkToDashboard.click();
+    }
+    else{
+        this.setState({
+            modalVisible:true,
+            type: 'login'
+        })
+    }
 }
 handleCloseModal = () => {
     this.setState({
@@ -269,8 +281,9 @@ handleCloseModal = () => {
 
 handlerSaveDash = (e) => {
     e.preventDefault()
+    let User = this.state.user===''? sessionStorage.user : this.state.user;
     let obj = {
-        user: this.state.user,
+        user: User,
         petName:this.state.petName,
         petAge:this.state.petAge,
         petRace:this.state.petRace,
@@ -363,6 +376,9 @@ handlerGetImageURL = (urlValue) => {
       regPass={this.state.regPass}
       regAgreement={this.state.regAgreement}
       onSubmit={this.onSubmit}
+      glider={this.glider}
+      found={this.state.found}
+      registerData={this.state.registerData}
       />
     );
   }

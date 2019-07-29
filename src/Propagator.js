@@ -14,7 +14,7 @@ const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
   let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
     handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful,
-    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit } = props
+    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit, glider, getRegisterInfo } = props
   return(
     <Router>
     <div>
@@ -22,7 +22,8 @@ const Propagator = (props) => {
         exact path={["/", "/home"]}
         render={
           (props) => {
-            updatePathStates({name:'onHome', value:false})
+            updatePathStates({name:'onHome', value:true})
+            //updatePathStates({name:'onDashboard', value:false})
             console.log('is login successful: ', isLoginSuccessful)
             return(
               <Home {...props}
@@ -46,6 +47,7 @@ const Propagator = (props) => {
                 regPass={props.regPass}
                 regAgreement={props.regAgreement}
                 onSubmit={onSubmit}
+                glider={glider}
               />
             )
           }
@@ -54,7 +56,7 @@ const Propagator = (props) => {
       <Route exact path="/dashboard/"
         render={
           (props) => {
-            updatePathStates({name:'onDashboard', value:true})
+            updatePathStates({name:'onHome', value:true})
             return(
               <Dashboard
                 {...props}
@@ -73,6 +75,7 @@ const Propagator = (props) => {
                 updateFlag={updateFlag}
                 handlerSaveDash={handlerSaveDash}
                 handlerGetImageURL={handlerGetImageURL}
+                registerData={props.registerData}
               />
             )
           }

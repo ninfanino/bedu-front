@@ -5,6 +5,7 @@ import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 import './upload.css'
+import MyRegisteredPets from './general/myRegisteredPets'
 
 // let  headerObj =      {
 //     "access-control-allow-origin": "*",
@@ -15,21 +16,23 @@ import './upload.css'
 const MyPets = (props) => {
     let urlImage=''
     let { handlerGetImageURL } = props 
-    //{console.log('Props MyPets: ', props)}
+    console.log('Mascotas en MyPets',props.registeredData )
     return(
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
         <div className="slogan">Aquí podrás ver y editar la información de las mascotas asosiadas a tu cuenta: {props.user}</div>
 
-        <div className="containerPhotos">
+        {/* <div className="containerPhotos">
+            
             <div className="slidderPhotos">
                 El slidder va aqui
             </div>
             <div className="addMore">
                 <img src="/images/icon-add.png" width="50" alt="Add more pets" />
             </div>
-        </div>
+        </div> */}
+        <MyRegisteredPets registerData={props.registerData}/>
 
         <div className="formMyPets">
             <form>

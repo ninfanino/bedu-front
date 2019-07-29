@@ -11,8 +11,9 @@ import Ads from '../components/dashboard/ads';
 class Dashboard extends Component {
     
     render() {
-        
-        if(!sessionStorage.getItem('user')) {
+        console.log('User on dash: ',sessionStorage.getItem('user'))
+        console.log('Mascotas en Dashboard',this.props.registeredData )
+        if(sessionStorage.getItem('user')==='') {
             return <Redirect to='/home' />
         }
         return(
@@ -34,6 +35,7 @@ class Dashboard extends Component {
                 updateFlag={this.props.updateFlag}
                 handlerSaveDash={this.props.handlerSaveDash}
                 handlerGetImageURL={this.props.handlerGetImageURL}
+                registerData={this.props.registerData}
             />
             <Ads/>
         </div>

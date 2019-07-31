@@ -9,6 +9,7 @@ import FindPartnerContainer from './pages/dashboardFindPartner';
 import FoundContainer from './pages/dashboardFound';
 import LostContainer from './pages/dashboardLost';
 import AdoptionsContainer from './pages/dashboardAdoptions';
+import NotificationsContainer from './pages/dashboardNotifications';
 
 const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
@@ -76,6 +77,19 @@ const Propagator = (props) => {
                 handlerSaveDash={handlerSaveDash}
                 handlerGetImageURL={handlerGetImageURL}
                 registerData={props.registerData}
+              />
+            )
+          }
+        }
+      />
+      <Route path="/dashboard/notifications"
+        render={
+          (props) => {
+            updatePathStates({name:'onDashboard', value:true})
+            return(
+              <NotificationsContainer
+                {...props}
+                
               />
             )
           }

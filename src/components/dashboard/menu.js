@@ -12,7 +12,9 @@ class MenuDashboard extends Component {
                     <NavLink to="/dashboard" exact activeClassName="selectedLink">
                         <li className="itemMenuDashboard myPets"></li>
                     </NavLink>
-                    <li className="itemMenuDashboard notifications"></li>
+                    <NavLink to="/dashboard/notifications" activeClassName="selectedLink">
+                        <li className="itemMenuDashboard notifications"></li>
+                    </NavLink>
                     <NavLink to="/dashboard/findPartner" activeClassName="selectedLink">
                         <li className="itemMenuDashboard findPartner"></li>
                     </NavLink>

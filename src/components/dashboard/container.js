@@ -2,7 +2,7 @@ import React from 'react'
 import MyPets from './myPets';
 
 const Container = (props) => {
-    console.log('Mascotas en Container',props.registeredData )
+    
     return(
     <div className="Container">
         <MyPets

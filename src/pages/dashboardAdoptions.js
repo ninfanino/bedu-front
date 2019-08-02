@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import MenuDashboard from '../components/dashboard/menu';
 
@@ -8,17 +8,19 @@ import ContainerAdoptions from '../components/dashboard/adoptions/containerAdopt
 
 
 
-const AdoptionsContainer = (props) => {
-    if(!sessionStorage.getItem('user')) {
-        return <Redirect to='/home' />
+class AdoptionsContainer extends Component {
+    render() {
+        if(!sessionStorage.getItem('user')) {
+            return <Redirect to='/home' />
+        }
+        return(
+        <div className="Dashboard">
+            <MenuDashboard/>
+            <ContainerAdoptions/>
+            <Ads/>
+        </div>
+        )
     }
-    return(
-    <div className="Dashboard">
-        <MenuDashboard/>
-        <ContainerAdoptions/>
-        <Ads/>
-    </div>
-    )
 }
 
 export default AdoptionsContainer

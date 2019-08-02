@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ItemGrid from '../general/itemGrid';
-import Modal from '../general/modal';
 import '../checkbox.css'
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
@@ -57,7 +55,7 @@ class ContainerNotifications extends Component {
         })
         .then(response => response.json())
         .then(data=> {
-            console.log('Los mensajes: ', data)
+            
           this.setState({
             data: data
           });
@@ -84,10 +82,10 @@ class ContainerNotifications extends Component {
         })
         .then(res => {
             if (res.status === 200) {
-                console.log('Mensaje enviado')
+                
             }
             else{
-                console.log('Error')
+                
             }
         })
     }
@@ -97,7 +95,7 @@ class ContainerNotifications extends Component {
         // );
 
         const grid = this.state.data.map((item, key) => 
-            <div className="MessageContainer">
+            <div className="MessageContainer" key={key}>
                 <div className="photoMessage">
                     <img src={item.picture} alt={item.mascota} />
                 </div>
@@ -109,7 +107,6 @@ class ContainerNotifications extends Component {
                 </div>
             </div>
         );
-        console.log("Entrando a notifications")
         return(
             <div className="Container">
                 <div className="title">Centro de Mensajes</div>

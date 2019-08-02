@@ -12,10 +12,10 @@ import AdoptionsContainer from './pages/dashboardAdoptions';
 import NotificationsContainer from './pages/dashboardNotifications';
 
 const Propagator = (props) => {
-  //console.log('Props Propagator: ', props)
+  
   let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin, handleOpenModalPagos,
     handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful,
-    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit, glider, getRegisterInfo } = props
+    updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit, glider } = props
   return(
     <Router>
     <div>
@@ -24,8 +24,7 @@ const Propagator = (props) => {
         render={
           (props) => {
             updatePathStates({name:'onHome', value:true})
-            //updatePathStates({name:'onDashboard', value:false})
-            console.log('is login successful: ', isLoginSuccessful)
+            
             return(
               <Home {...props}
                 modalVisible={modalVisible}

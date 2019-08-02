@@ -35,7 +35,7 @@ class MyRegisteredPets extends Component {
     }
 
     getRegisterInfo = () => {
-        console.log('Get info para ',sessionStorage.getItem('user'))
+        
       let form = {
           email: sessionStorage.getItem('user')
       }
@@ -50,12 +50,12 @@ class MyRegisteredPets extends Component {
       })
       .then(response => response.json())
       .then(data=> {
-          console.log('Los perritos registrados:', data)
+          
           let data1=data;
           for(let i=data.length; i<5; i++){
               data1.push({picture: "/images/huellita.png"})
           }
-          console.log('Los perritos registrados:', data)
+          
           if(data.length>0){
             this.setState({
               registerData: []
@@ -72,22 +72,12 @@ class MyRegisteredPets extends Component {
 
 componentWillMount(){
     this.getRegisterInfo();
-    console.log('Los perritos registrados en will mount:', this.state.registerData)
+    
 }
 
-    componentDidMount(){
-        //console.log(`Perritos registrados ${this.state.found}`)
-        console.log('Hola, soy componentdidmount')
-        
-        
-        //founded.mount({ Images, Controls })
-
-        
-    }
 
     render(){
-        console.log('Rendereando la barra de mascotas registradas',this.state.registerData )
-        //this.getInfo()
+       
     return (
         <div className="PerrosEncontrados" id="perrosRegistrados">
             <div className="PerrosEncontradosContainer">

@@ -11,8 +11,7 @@ import Ads from '../components/dashboard/ads';
 class Dashboard extends Component {
     
     render() {
-        console.log('User on dash: ',sessionStorage.getItem('user'))
-        console.log('Mascotas en Dashboard',this.props.registeredData )
+        
         if(sessionStorage.getItem('user')==='') {
             return <Redirect to='/home' />
         }

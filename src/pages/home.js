@@ -23,12 +23,11 @@ import PayPal from '../components/general/paypal';
 
 class Home extends Component {
     componentDidMount() {
-        console.log('Mounting on Home!')
         this.props.glider()
     }
     render(){
     let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin, handleOpenModalPagos,updateFlag,
-        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit, glider} = this.props;
+        handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit} = this.props;
         // componentDidMount() {
         //     props.glider()
         // }

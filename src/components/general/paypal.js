@@ -24,7 +24,7 @@ const PayPal = (props) => {
                 {/* <Redirect  to={onPath}/>  */}
                 {/* <Link to='/dashboard/'/> */}
                 <button className="btnBlogPago" onClick={props.handlerLogin}>
-                    <img src="./images/doanatepaypal.jpg" className="payPalButton"/>
+                    <img src="./images/doanatepaypal.jpg" className="payPalButton" alt="Paypal"/>
                 </button>
             </div>
             {

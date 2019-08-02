@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import MenuDashboard from '../components/dashboard/menu';
 
@@ -7,17 +7,19 @@ import Ads from '../components/dashboard/ads';
 import ContainerLost from '../components/dashboard/lost/containerLost';
 
 
-const LostContainer = (props) => {
-    if(!sessionStorage.getItem('user')) {
-        return <Redirect to='/home' />
+class LostContainer extends Component {
+    render(){
+        if(!sessionStorage.getItem('user')) {
+            return <Redirect to='/home' />
+        }
+        return(
+        <div className="Dashboard">
+            <MenuDashboard/>
+            <ContainerLost/>
+            <Ads/>
+        </div>
+        )
     }
-    return(
-    <div className="Dashboard">
-        <MenuDashboard/>
-        <ContainerLost/>
-        <Ads/>
-    </div>
-    )
 }
 
 export default LostContainer

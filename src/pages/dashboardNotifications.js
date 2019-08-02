@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import MenuDashboard from '../components/dashboard/menu';
 
@@ -7,12 +7,12 @@ import Ads from '../components/dashboard/ads';
 import ContainerNotifications from '../components/dashboard/notifications/containerNotifications';
 
 
-
-const NotificationsContainer = (props) => {
+class NotificationsContainer extends Component {
+    render(){
     if(!sessionStorage.getItem('user')) {
         return <Redirect to='/home' />
     }
-    console.log("Entrando a notifications previo")
+    
     return(
     <div className="Dashboard">
         <MenuDashboard/>
@@ -20,6 +20,7 @@ const NotificationsContainer = (props) => {
         <Ads/>
     </div>
     )
+    }
 }
 
 export default NotificationsContainer

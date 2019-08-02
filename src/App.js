@@ -56,7 +56,7 @@ class App extends Component {
         email: this.state.regEmail,
         password: this.state.regPass
     }
-    console.log("Entrando al boton", form)
+    
     if(this.state.regAgreement){
         fetch("http://localhost:3001/register", {
             headers: {
@@ -90,14 +90,7 @@ class App extends Component {
                 })
             }
         })
-        // axios.post('http://localhost:3001/register', {
-        //     form
-        // })
-        // .then(response=>{console.log(response)})
-        // .then(function (response) {
-        //     console.log("Si jalo");
-        //     console.log(response);
-        // })
+        
         .catch(function (error) {
             Swal.fire({
                 type: 'error',
@@ -123,7 +116,7 @@ class App extends Component {
         user: this.state.user,
         pass: this.state.pass
     }
-    console.log("Entrando al boton", obj)
+    
     fetch("http://localhost:3001/login", {
         headers: {
         'Accept': 'application/json',
@@ -156,7 +149,6 @@ class App extends Component {
         }
     })
     //.then(res => {
-    //    console.log()
     //    if(comingMessage.message === 'ALL OK'){
     //        let preState = this.state.onThisPath;
     //        preState.onHome=false;
@@ -185,24 +177,12 @@ class App extends Component {
 updateAttribute = (e) =>{
 
     this.setState({[e.name]: e.value})
-    console.log(this.state.regEmail, this.state.user, this.state.pass, this.state.petName,
-        
-        this.state.regPass,
-        this.state.petAge,
-        this.state.petRace,
-        this.state.petCertificate,
-        this.state.petEmergency,
-        this.state.petGender
-        )
+    
 }
 
 updateFlag = (e) =>{
     this.setState({[e.name]: !this.state[e.name]})
-    console.log(this.state.petAdopt,
-        this.state.petLost,
-        this.state.petFound,
-        this.state.petInLove)
-    console.log(this.state.regAgreement)
+    
 }
 
 glider = () => {
@@ -211,14 +191,12 @@ glider = () => {
 }
 
 updatePathStates = (att)=>{
-    console.log('updatePathState: ',this.state.onThisPath[att.name], att.name,att.value, this.state)
     
     if(!this.state.onThisPath[att.name]){
         let preState = this.state.onThisPath
         for (const prop in preState) {
-            console.log(`preState.${prop} = ${preState[prop]}`);
+            
             if(prop===att.name){
-                console.log(`Esta es la prop: ${prop}`, !att.value, att.value)
                 preState[prop] = true;
             }
             else{
@@ -230,7 +208,7 @@ updatePathStates = (att)=>{
 }
 
 handleDispalyedMenu = () => {
-  console.log('Ejecutando handle Displayed Menu')
+  
     var x = document.getElementById("MenuList");
     if (x.className === "MenuNav") {
         x.className += " responsive";
@@ -243,11 +221,9 @@ handleDispalyedMenu = () => {
             menuDisplayed:false,
         })
     }
-    console.log(x.className)
 }
 
 componentDidMount() {
-    console.log('Mounting on App:', this.state.onThisPath.onHome)
     if(this.state.onThisPath.onHome){
         //this.glider()
     }
@@ -302,7 +278,6 @@ handlerSaveDash = (e) => {
         petInLove:this.state.petInLove,
         petURL:this.state.petURL
     }
-    console.log(obj)
 
     fetch("http://localhost:3001/save-pet", {
         headers: {
@@ -340,11 +315,11 @@ handlerSaveDash = (e) => {
 
 handlerGetImageURL = (urlValue) => {
     //e.preventDefault()
-    console.log('Cambiando la URL de imagen: ', urlValue )
+    
     this.setState({petURL: urlValue})
 }
   render() { 
-      console.log(`Haciendo render: User: ${this.state.user}, Pass: ${this.state.pass}`)
+      
     return ( 
      <Propagator
       modalVisible={this.state.modalVisible}

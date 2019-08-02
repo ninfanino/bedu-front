@@ -17,8 +17,8 @@ import Mapa from './general/mapa'
 
 const MyPets = (props) => {
     let urlImage=''
-    let { handlerGetImageURL } = props 
-    console.log('Mascotas en MyPets',props.registeredData )
+    let { handlerGetImageURL, registerData } = props 
+    
     return(
     <div>
         <div className="title">mis mascotas</div>
@@ -34,7 +34,7 @@ const MyPets = (props) => {
                 <img src="/images/icon-add.png" width="50" alt="Add more pets" />
             </div>
         </div> */}
-        <MyRegisteredPets registerData={props.registerData}/>
+        <MyRegisteredPets registerData={registerData}/>
 
         <div className="formMyPets">
             <form>

@@ -153,7 +153,13 @@
     width: 200px;
     height: 130px;
 }
-
+.MessageContainer{
+    width:95%;
+    padding: 10px;
+    display: inline-flex;
+    background: #f7f7f7;
+    margin:10px;
+}
 .btnRed {
     border-radius: 15px;
     border: none;
@@ -178,6 +184,13 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+}
+.ContainerGridMessage {
+    display: inline-block;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 100%;
+    margin-right: 20px;
 }
 .itemGrid {
     width: 31%;
@@ -220,6 +233,17 @@
     height: 100%;
     object-fit: cover;
 }
+
+div.MessageBox{
+    display: inline;
+    width: 50%;
+}
+.photoMessage img {
+    display: inline;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 .photoDetails {
     display: flex;
     flex-direction: column;
@@ -252,16 +276,21 @@
 }
 .photoMessage {
     border: none;
-    border-bottom: 1px solid #efefef;
-    border-top: 1px solid #efefef;
-    padding: 10px 20px;
     height: 100px;
-    width: 100%;
+    width: 20%;
     box-sizing: border-box;
     font-size: 14px;
     color: #999;
     font-family: 'Roboto', sans-serif;
 }
+.sloganMessage {
+    color: #2b3034;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+
 .photoDetails .btnRed {
     margin-left: 20px;
 }

@@ -97,15 +97,16 @@ class ContainerNotifications extends Component {
         // );
 
         const grid = this.state.data.map((item, key) => 
-            <div>
-                <div className="photoModal">
+            <div className="MessageContainer">
+                <div className="photoMessage">
                     <img src={item.picture} alt={item.mascota} />
                 </div>
-                <h3>Remitente: {item.remitente}</h3>
-                <h3>Destinatario: {item.destinatario}</h3>
-                <h3>Mascota: {item.mascota}</h3>
-                <h3>Mensaje: {item.mensaje}</h3>
-
+                <div className="MessageBox">
+                    <div className="sloganMessage">Remitente: {item.remitente}</div>
+                    <div className="sloganMessage">Destinatario: {item.destinatario}</div>
+                    <div className="sloganMessage">Mascota: {item.mascota}</div>
+                    <div className="sloganMessage" id="messageMessage">Mensaje: {item.mensaje}</div>
+                </div>
             </div>
         );
         console.log("Entrando a notifications")
@@ -115,7 +116,7 @@ class ContainerNotifications extends Component {
                 <div className="lineGreen left"></div>
                 <div className="slogan">Lorem ipsum</div>
                 
-                <div className="ContainerGrid">
+                <div className="ContainerGridMessage">
                     { grid }
                     
                 </div>

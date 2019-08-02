@@ -86,7 +86,7 @@ class ContainerLost extends Component {
             <div className="Container">
                 <div className="title">perros perdidos</div>
                 <div className="lineGreen left"></div>
-                <div className="slogan">Lorem ipsum</div>
+                <div className="slogan">No puedo prometerte que voy a estar el resto de tu vida, pero si que voy a amarte el resto de la mia. Ayuda a sus dueños a recuperar a sus mascotas:</div>
 
                 <div className="ContainerGrid">
                     { grid }

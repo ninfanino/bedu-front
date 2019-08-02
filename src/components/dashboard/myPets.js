@@ -6,6 +6,8 @@ import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 import './upload.css'
 import MyRegisteredPets from './general/myRegisteredPets'
+import Mapa from './general/mapa'
+
 
 // let  headerObj =      {
 //     "access-control-allow-origin": "*",
@@ -21,7 +23,7 @@ const MyPets = (props) => {
     <div>
         <div className="title">mis mascotas</div>
         <div className="lineGreen left"></div>
-        <div className="slogan">Aquí podrás ver y editar la información de las mascotas asosiadas a tu cuenta: {props.user}</div>
+        <div className="slogan">Aquí podrás ver y editar la información de las mascotas asosiadas a tu cuenta: {sessionStorage.user}</div>
 
         {/* <div className="containerPhotos">
             
@@ -139,8 +141,13 @@ const MyPets = (props) => {
                             <span className="checkmark"></span>
                         </label>
                     </div>
+                    <div className="item11">
+                        <Mapa />
+                    </div>
                 </div>
                 <button className="btnRed" onClick={e=>props.handlerSaveDash(e,urlImage)}>Guardar</button>
+                
+                
             </form>
         </div>
     </div>

@@ -13,7 +13,7 @@ import NotificationsContainer from './pages/dashboardNotifications';
 
 const Propagator = (props) => {
   //console.log('Props Propagator: ', props)
-  let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,
+  let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin, handleOpenModalPagos,
     handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful,
     updatePathStates, onHome, onDashboard, updateFlag, handlerSaveDash, handlerGetImageURL, onSubmit, glider, getRegisterInfo } = props
   return(
@@ -43,6 +43,7 @@ const Propagator = (props) => {
                 handleDispalyedMenu={handleDispalyedMenu}
                 handleOpenModalRegistro={handleOpenModalRegistro}
                 handleOpenModalLogin={handleOpenModalLogin}
+                handleOpenModalPagos={handleOpenModalPagos}
                 handleCloseModal={handleCloseModal}
                 regEmail={props.regEmail}
                 regPass={props.regPass}

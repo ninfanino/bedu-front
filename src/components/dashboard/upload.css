@@ -1,6 +1,6 @@
 .iu-loadContainer {
-    width: 200px;
-    height: 130px;
+    width: 400px;
+    height: 160px;
     border-radius: 0px;
 }
 .iu-label {
@@ -14,5 +14,5 @@
     border-color:#e1e2e4 !important;
 }
 .iu-dropzone:hover {
-    background-color:;
+    background-color:#e1e2e4;
 }

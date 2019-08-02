@@ -9,7 +9,10 @@ class MyRegisteredPets extends Component {
     state = {
         registerData:  [
             {
-                picture:     "/images/huellita.png"
+                picture: "/images/huellita.png"
+            },
+            {
+                picture: "/images/huellita.png"
             },
             {
                 picture: "/images/huellita.png"
@@ -48,13 +51,20 @@ class MyRegisteredPets extends Component {
       .then(response => response.json())
       .then(data=> {
           console.log('Los perritos registrados:', data)
-          this.setState({
-            registerData: []
-          })
-          this.setState({
+          let data1=data;
+          for(let i=data.length; i<5; i++){
+              data1.push({picture: "/images/huellita.png"})
+          }
+          console.log('Los perritos registrados:', data)
+          if(data.length>0){
+            this.setState({
+              registerData: []
+            })
+            this.setState({
               registerData: data
-         });
-         this.state.founded.mount({ Images, Controls })
+            });
+          }
+          this.state.founded.mount({ Images, Controls })
       });
       
     };

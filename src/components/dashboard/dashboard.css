@@ -1,3 +1,7 @@
+.element {
+    width: 80px;
+ }
+
 .MenuDashboard {
     background: #2b3034;
     text-align: center;
@@ -97,7 +101,7 @@
     width: 134px;
 }
 .Container {
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     padding: 20px 30px 30px 100px;
 }
@@ -116,10 +120,16 @@
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
+    /* grid-template-areas:
       'foto nombre nombre edad raza'
       'foto certificado certificado emergencia genero'
-      'foto adopcion perdido encontrado pareja';
+      'foto adopcion perdido encontrado pareja'; */
+      grid-template-areas:
+      'foto foto nombre nombre raza'
+      'foto foto certificado certificado genero'
+      'foto foto adopcion perdido edad'
+      'foto foto encontrado pareja emergencia'
+      'mapa mapa mapa mapa mapa ';
     grid-gap: 10px;
     padding: 30px 0px;
   }
@@ -137,17 +147,20 @@
 .my-pets-grid-container .item8 { grid-area: perdido; }
 .my-pets-grid-container .item9 { grid-area: encontrado; }
 .my-pets-grid-container .item10 { grid-area: pareja; }
+.my-pets-grid-container .item11 { grid-area: mapa; height: 100px; }
 
 .addPhoto {
     width: 200px;
     height: 130px;
 }
+
 .btnRed {
     border-radius: 15px;
     border: none;
     height: 30px;
     width: 90px;
     margin: 10px 0;
+    margin-top: 100px;
     color: #fff;
     background: #e52931;
     font-family: 'Roboto', sans-serif;
@@ -156,6 +169,7 @@
     text-align: center;
     line-height: 30px;
 }
+
 .btnRed.disabled {
     background: #a59a9a;
     cursor: default;

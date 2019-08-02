@@ -271,6 +271,12 @@ handleOpenModalLogin = () => {
         })
     }
 }
+handleOpenModalPagos = () => {
+    this.setState({
+        modalVisible:true,
+        type: 'pago'
+    })
+}
 handleCloseModal = () => {
     this.setState({
         modalVisible: false
@@ -358,6 +364,7 @@ handlerGetImageURL = (urlValue) => {
       handleDispalyedMenu={this.handleDispalyedMenu}
       handleOpenModalRegistro={this.handleOpenModalRegistro}
       handleOpenModalLogin={this.handleOpenModalLogin}
+      handleOpenModalPagos={this.handleOpenModalPagos}
       handleCloseModal={this.handleCloseModal}
       petName={this.state.petName}
       petAge={this.state.petAge}

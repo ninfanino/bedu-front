@@ -84,7 +84,7 @@ class ContainerFound extends Component {
             <div className="Container">
                 <div className="title">perros encontrados</div>
                 <div className="lineGreen left"></div>
-                <div className="slogan">Lorem ipsum</div>
+                <div className="slogan">Conocer el amor es tener un perrito en casa, ayuda a estos peques a volver a su hogar:</div>
 
                 <div className="ContainerGrid">
                     { grid }

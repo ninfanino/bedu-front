@@ -94,7 +94,7 @@ class containerFindPartner extends Component {
             <div className="Container">
                 <div className="title">encuentra pareja</div>
                 <div className="lineGreen left"></div>
-                <div className="slogan">Lorem ipsum</div>
+                <div className="slogan">Amor es una palabra de cuatro patitas. Aquí puedes flechar a la pareja de tu mejor amigo!: </div>
 
                 <div className="ContainerGrid">
                     { grid }

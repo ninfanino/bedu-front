@@ -84,7 +84,7 @@ class ContainerAdoptions extends Component {
             <div className="Container">
                 <div className="title">adopciones</div>
                 <div className="lineGreen left"></div>
-                <div className="slogan">Lorem ipsum</div>
+                <div className="slogan">Dame una caricia y te seguiré hasta el fin del mundo. Tu mejor amigo se encuentra a un click:</div>
 
                 <div className="ContainerGrid">
                     { grid }

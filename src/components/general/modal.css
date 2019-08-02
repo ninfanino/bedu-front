@@ -49,6 +49,10 @@
     font-size: 20px;
     padding: 20px;
   }
+  .payPalButton{
+    width: 150px;
+    margin-left: -10px;
+  }
   .fieldsContainer {
       width: 100%;
       padding: 0px 20px; 

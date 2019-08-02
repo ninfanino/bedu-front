@@ -23,7 +23,9 @@ const PayPal = (props) => {
             <div className="btnFormulario">
                 {/* <Redirect  to={onPath}/>  */}
                 {/* <Link to='/dashboard/'/> */}
-                <button className="btnBlog" onClick={props.handlerLogin}>Ingresa a tu cuenta</button>
+                <button className="btnBlogPago" onClick={props.handlerLogin}>
+                    <img src="./images/doanatepaypal.jpg" className="payPalButton"/>
+                </button>
             </div>
             {
             !props.isLoginSuccessful && 

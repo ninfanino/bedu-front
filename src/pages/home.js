@@ -15,7 +15,7 @@ import ModalContainer from '../components/general/modalContainer';
 import Modal from '../components/general/modal';
 import Registro from '../components/general/registro';
 import Login from '../components/general/login';
-
+import PayPal from '../components/general/paypal';
 
 /*****
  * Header necesita enviar una funcion para abrir el formulario de registro
@@ -27,7 +27,7 @@ class Home extends Component {
         this.props.glider()
     }
     render(){
-    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin,updateFlag,
+    let {handlerLogin, updateAttribute, handleDispalyedMenu, handleOpenModalRegistro, handleOpenModalLogin, handleOpenModalPagos,updateFlag,
         handleCloseModal, modalVisible, type, menuDisplayed, user, pass, loginMessage, isLoginSuccessful, onDashboard, onSubmit, glider} = this.props;
         // componentDidMount() {
         //     props.glider()
@@ -35,6 +35,7 @@ class Home extends Component {
     return (
         <div>
             <Menu handleOpenModal={handleOpenModalLogin}
+                    handleOpenModalPagos={handleOpenModalPagos}
                     handleDispalyedMenu={handleDispalyedMenu}
                     menuDisplayed={menuDisplayed}
             />
@@ -71,6 +72,15 @@ class Home extends Component {
                                     user={user}
                                     pass={pass}
                                     onDashboard={onDashboard}
+                            />
+                        }
+
+{
+                            type === 'pago' &&
+                            <PayPal 
+                                    updateAttribute={updateAttribute}
+                                    loginMessage={loginMessage}
+                                    isLoginSuccessful={isLoginSuccessful}
                             />
                         }
                     </Modal>

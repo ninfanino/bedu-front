@@ -263,6 +263,17 @@ body {
     text-align: center;
     line-height: 30px;
 }
+
+.btnBlogPago {
+    border:none;
+    height: 30px;
+    width: 90px;
+    margin: 10px 0;
+    color: #fff;
+    background-color: white;
+    text-align: center;
+}
+
 .Publicidad .item1 { 
     grid-area: publicidad1; 
     background: url('/images/publicidad1.jpg');
